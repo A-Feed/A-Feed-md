@@ -1,3 +1,27 @@
 <resources>
-    <string name="app_name">afeed</string>
+    <string name="app_name">MyAfeedDesign</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="notification">Notification</string>
+    <string name="unit">Unit</string>
+    <string name="_0">0</string>
+    <string name="monitoring_activty_title">Monitoring A-Feeding</string>
+    <string name="monitoring_activity_title">click one of the card below to see the detail data and connect it to get Real time data and static data from A-Feeder</string>
+    <string name="list_of_registered_fishpond_title">List of registered FishPond</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="score">Score</string>
+    <string name="fishpond_score_amp_status"><![CDATA[Fishpond Score & Status]]></string>
+    <string name="fishpond_status">FishPond Status</string>
+    <string name="colon">:</string>
+    <string name="cause">Cause</string>
+    <string name="temperature_total">Temperature Total</string>
+    <string name="ph_total_score">Ph Total Score</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="base_feeding_progress">Base Feeding Progress</string>
+    <string name="connected_device">Connected Device</string>
+    <string name="automatic_feed">A-Feeding</string>
+    <string name="ph_system">Ph System</string>
+    <string name="temperature_system">Temperature System</string>
+    <string name="fishpond_profile">Fishpond profile</string>
+
 </resources>

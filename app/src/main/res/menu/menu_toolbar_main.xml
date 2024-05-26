@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:title="@string/notification"
+        android:id="@+id/appbar_notification_navigate"
+        android:icon="@drawable/ic_bell"
+        app:showAsAction="always"
+        />
+</menu>
