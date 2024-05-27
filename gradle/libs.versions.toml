@@ -2,6 +2,7 @@
 agp = "8.4.0"
 circleimageview = "3.1.0"
 converterGson = "2.11.0"
+coreSplashscreen = "1.0.1"
 datastorePreferences = "1.1.1"
 glide = "4.16.0"
 kotlin = "1.9.0"
@@ -17,6 +18,7 @@ constraintlayout = "2.1.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }

@@ -23,5 +23,8 @@
     <string name="ph_system">Ph System</string>
     <string name="temperature_system">Temperature System</string>
     <string name="fishpond_profile">Fishpond profile</string>
+    <string name="splash_icon">Splash Icon</string>
+    <string name="splash_description">Build By Capstone Group</string>
+    <string name="id_team">C241-PS367</string>
 
 </resources>
