@@ -23,7 +23,6 @@
     <string name="ph_system">Ph System</string>
     <string name="temperature_system">Temperature System</string>
     <string name="fishpond_profile">Fishpond profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="id_system">ID System</string>
     <string name="status">Status</string>
@@ -38,5 +37,8 @@
     <string name="a_feeding">A-Feeding</string>
     <string name="add">Add +</string>
     <string name="food_amount">Food Amount</string>
+    <string name="splash_icon">Splash Icon</string>
+    <string name="splash_description">Build By Capstone Group</string>
+    <string name="id_team">C241-PS367</string>
 
 </resources>
