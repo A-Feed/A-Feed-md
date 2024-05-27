@@ -23,13 +23,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.MonitoringDetailActivity"
+            android:name=".ui.fishpondform.AFeedingFormActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MonitoringActivity"
+            android:name=".ui.fishpondform.FishPondFormActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.monitoring.detail.MonitoringDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.monitoring.MonitoringActivity"
             android:exported="false" />
     </application>
 
