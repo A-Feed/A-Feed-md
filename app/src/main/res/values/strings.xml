@@ -40,5 +40,6 @@
     <string name="splash_icon">Splash Icon</string>
     <string name="splash_description">Build By Capstone Group</string>
     <string name="id_team">C241-PS367</string>
+    <string name="cd_introduction">informations about this app</string>
 
 </resources>
