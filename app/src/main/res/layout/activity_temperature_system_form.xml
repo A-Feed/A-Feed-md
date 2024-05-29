@@ -5,14 +5,17 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fishpondform.AFeedingFormActivity">
+    tools:context=".ui.fishpondform.TemperatureSystemFormActivity">
+
 
     <include
         android:id="@+id/included_toolbar_main"
         layout="@layout/toolbar_main"
         android:elevation="1000dp" />
 
+
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -47,66 +50,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_bold"
-                android:text="@string/a_feeding"
+                android:text="@string/temperature_system"
                 android:textSize="22sp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/wrapper_progress_form" />
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cardView4"
-                android:layout_width="0dp"
-                android:layout_height="400sp"
-                android:layout_margin="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView10">
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:fontFamily="@font/inter_bold"
-                    android:text="@string/feeding_schedule"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extendedFloatingActionButton"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8"
-                    tools:listitem="@layout/list_column_card_input_schedule" />
-
-                <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                    android:id="@+id/extendedFloatingActionButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/add"
-                    android:text="@string/add"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView5"
                 android:layout_width="0dp"
                 android:layout_height="400sp"
                 android:layout_margin="20dp"
+                android:layout_marginTop="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView4">
+                app:layout_constraintTop_toBottomOf="@+id/textView10">
 
                 <TextView
                     android:id="@+id/textView9"
@@ -114,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:fontFamily="@font/inter_bold"
-                    android:text="@string/a_feeding_system"
+                    android:text="@string/temperature_system"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -151,12 +110,13 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginHorizontal="25dp"
                 android:layout_marginVertical="50dp"
-                android:contentDescription="@string/next"
+                android:contentDescription="@string/save"
                 android:drawableEnd="@drawable/ic_double_arrow"
-                android:text="@string/next"
+                android:text="@string/save"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
