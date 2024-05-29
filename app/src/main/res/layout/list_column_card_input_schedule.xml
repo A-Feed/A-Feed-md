@@ -40,12 +40,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/time"
+            app:startIconDrawable="@drawable/ic_clock"
             android:layout_marginHorizontal="10dp"
             app:layout_constraintStart_toStartOf="@+id/textView_Label_time"
             app:layout_constraintTop_toBottomOf="@+id/textView_Label_time">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputText_time"
+                android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
@@ -67,12 +69,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/food_amount"
+            app:startIconDrawable="@drawable/ic_weight"
             android:layout_marginHorizontal="10dp"
             app:layout_constraintStart_toStartOf="@+id/textView_Label_food_amount"
             app:layout_constraintTop_toBottomOf="@+id/textView_Label_food_amount">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputText_timw"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
