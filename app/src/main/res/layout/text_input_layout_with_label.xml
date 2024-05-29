@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp">
 
     <TextView
         android:id="@+id/textView_Label"
@@ -10,18 +12,20 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:fontFamily="@font/inter_bold"
-        android:text="@string/fishpond_name"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Title" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/fishpond_name"
         android:layout_marginHorizontal="10dp"
         app:layout_constraintStart_toStartOf="@+id/textView_Label"
-        app:layout_constraintTop_toBottomOf="@+id/textView_Label">
+        app:layout_constraintTop_toBottomOf="@+id/textView_Label"
+        app:startIconDrawable="@drawable/ic_id_card"
+        tools:hint="PlaceHolder">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputText"

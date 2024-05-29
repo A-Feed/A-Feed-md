@@ -4,7 +4,7 @@
     <string name="notification">Notification</string>
     <string name="unit">Unit</string>
     <string name="_0">0</string>
-    <string name="monitoring_activty_title">Monitoring A-Feeding</string>
+    <string name="monitoring_activty_title">Monitoring Fishpond</string>
     <string name="monitoring_activity_title">click one of the card below to see the detail data and connect it to get Real time data and static data from A-Feeder</string>
     <string name="list_of_registered_fishpond_title">List of registered FishPond</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
@@ -28,7 +28,7 @@
     <string name="status">Status</string>
     <string name="no">No.%s</string>
     <string name="time">Time</string>
-    <string name="kg">$s Kg</string>
+    <string name="kg">%s Kg</string>
     <string name="feeding_schedule">Feeding Schedule</string>
     <string name="list_of_registered_a_feeding">List of registered A-Feeding</string>
     <string name="list_of_registered_ph_system">List of registered Ph System</string>
@@ -40,5 +40,17 @@
     <string name="splash_icon">Splash Icon</string>
     <string name="splash_description">Build By Capstone Group</string>
     <string name="id_team">C241-PS367</string>
+    <string name="list_of_registered_temperature_system">List Of Registered Temperature System</string>
+    <string name="a_feeding_system">A-Feeding System</string>
+    <string name="save">Save</string>
+    <string name="close">Close</string>
+    <string name="you_need_to_sign_in_first_or_sign_up_and_make_new_account">You need to Sign in first or Sign Up and make new account</string>
+    <string name="access_denied">Access Denied</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
 
 </resources>
