@@ -19,6 +19,9 @@
             android:name=".ui.fishpondform.PhSystemFormActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.introduction.IntroductionActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.App.SplashScreen">
