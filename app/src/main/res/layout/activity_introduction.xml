@@ -7,6 +7,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.introduction.IntroductionActivity">
 
+    <TextView
+        android:id="@+id/tv_welcome_to_afeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_afeed"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/vp_image_slider"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_discover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discover"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/vp_image_slider"
+        app:layout_constraintEnd_toEndOf="@+id/tv_welcome_to_afeed"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome_to_afeed"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome_to_afeed" />
+
+
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/vp_image_slider"
         android:layout_width="match_parent"
@@ -15,6 +40,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip"
+        android:layout_margin="32dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vp_image_slider" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

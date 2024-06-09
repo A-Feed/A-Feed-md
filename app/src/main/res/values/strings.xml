@@ -40,5 +40,21 @@
     <string name="splash_icon">Splash Icon</string>
     <string name="splash_description">Build By Capstone Group</string>
     <string name="id_team">C241-PS367</string>
+    <string name="welcome_to_afeed">Welcome To A-Feed!</string>
+    <string name="discover">Discover Our Capabilities</string>
+    <string name="skip">Skip</string>
+    <string name="a_feeding_system">A-Feeding</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="save">Save</string>
+    <string name="access_denied">Access Denied</string>
+    <string name="you_need_to_sign_in_first_or_sign_up_and_make_new_account">You need to sign in first or sign up and make new account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="close">Close</string>
+    <string name="list_of_registered_temperature_system">List of registered FishPond</string>
+    <string name="cd_introduction">introduction</string>
 
 </resources>
