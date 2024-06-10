@@ -19,9 +19,11 @@
             android:name=".ui.fishpondform.phsystemform.PhSystemFormActivity"
             android:exported="false" />
 
-        <!--        this is for testing the view the easy way dont delete unless it production -Qushai -->
         <activity
-            android:name=".ui.fishpondform.fishpondprofileform.FishPondFormActivity"
+            android:name=".ui.introduction.IntroductionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Afeed">
             <intent-filter>
@@ -31,6 +33,7 @@
             </intent-filter>
         </activity>
 
+        <!--        this is for testing the view the easy way dont delete unless it production -Qushai -->
 
 <!--        <activity-->
 <!--            android:name=".SplashActivity"-->
