@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -40,14 +41,23 @@ android {
 }
 
 dependencies {
-
+// circle image view
     implementation(libs.circleimageview)
+
+//    GLIDE
+    implementation(libs.glide)
+
+
+//    Datastore Preference
     implementation(libs.androidx.datastore.preferences)
+
+//    Connection To Rest Api
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation(libs.androidx.core.ktx)
     implementation(libs.logging.interceptor)
-    implementation(libs.glide)
+
+//    KTX
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
 

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fishpondform.AFeedingFormActivity">
+    tools:context=".ui.fishpondform.afeedingform.AFeedingFormActivity">
 
     <include
         android:id="@+id/included_toolbar_main"
@@ -19,11 +19,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guidelineappbar">
 
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content"
+            android:paddingBottom="200dp"
+            >
 
             <FrameLayout
                 android:id="@+id/wrapper_progress_form"
@@ -36,7 +36,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <include
-                    android:id="@+id/progress_form"
+                    android:id="@+id/include_progress_form_indicator"
                     layout="@layout/progress_fishpond_form" />
 
             </FrameLayout>
@@ -54,11 +54,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/wrapper_progress_form" />
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView4"
                 android:layout_width="0dp"
-                android:layout_height="400sp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,18 +75,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView_a_feeding_schedule"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extendedFloatingActionButton"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_add_a_feeding_schedule"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView8"
-                    tools:listitem="@layout/list_column_card_input_schedule" />
+                    tools:itemCount="1"
+                    tools:listitem="@layout/item_column_card_input_schedule" />
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                    android:id="@+id/extendedFloatingActionButton"
+                    android:id="@+id/btn_add_a_feeding_schedule"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/add"
@@ -102,7 +103,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView5"
                 android:layout_width="0dp"
-                android:layout_height="400sp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -120,18 +121,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView_a_feeding_system"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extendedFloatingActionButton2"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_add_a_feeding_system"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:listitem="@layout/text_input_layout_with_label" />
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_text_input_layout_with_label" />
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                    android:id="@+id/extendedFloatingActionButton2"
+                    android:id="@+id/btn_add_a_feeding_system"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/add"
@@ -144,23 +147,24 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_marginHorizontal="25dp"
-                android:layout_marginVertical="50dp"
-                android:contentDescription="@string/next"
-                android:drawableEnd="@drawable/ic_double_arrow"
-                android:text="@string/next"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView5" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginHorizontal="25dp"
+        android:layout_marginVertical="50dp"
+        android:contentDescription="@string/next"
+        android:drawableEnd="@drawable/ic_double_arrow"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 
     <androidx.constraintlayout.widget.Guideline

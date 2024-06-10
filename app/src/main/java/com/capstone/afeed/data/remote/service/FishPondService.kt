@@ -1,12 +1,17 @@
 package com.capstone.afeed.data.remote.service
 
+import com.capstone.afeed.data.remote.request.FishpondIotRequest
 import com.capstone.afeed.data.remote.response.GetDetailFishPondResponse
 import com.capstone.afeed.data.remote.response.GetListAFeedingFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetListFishPondResponse
 import com.capstone.afeed.data.remote.response.GetListPhSystemFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetListTemperatureSystemFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetTotalRegisteredFishPondResponse
+import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface FishPondService {
@@ -14,29 +19,46 @@ interface FishPondService {
     @GET("/registered/iotdevice/{id}")
     suspend fun getTotalRegisteredFishpond(
         @Path("id") userId: Int
-    ) : GetTotalRegisteredFishPondResponse
+    ): GetTotalRegisteredFishPondResponse
 
     @GET("/list/fishpond")
-    suspend fun getListFishPond() : GetListFishPondResponse
+    suspend fun getListFishPond(): GetListFishPondResponse
 
     @GET("/fishpond/{id}")
     suspend fun getDetailFishPond(
         @Path("id") fishPondId: Int
-    ) : GetDetailFishPondResponse
+    ): GetDetailFishPondResponse
 
     @GET("/fishpond/{id}/list/afeeding")
     suspend fun getListAFeedingFromFishPondId(
         @Path("id") fishPondId: Int
-    ) : GetListAFeedingFromFishPondIDResponse
+    ): GetListAFeedingFromFishPondIDResponse
 
     @GET("/fishpond/{id}/list/phsystem")
     suspend fun getListPhSystemFromFishPondID(
         @Path("id") fishPondId: Int
-    ) : GetListPhSystemFromFishPondIDResponse
+    ): GetListPhSystemFromFishPondIDResponse
 
     @GET("/fishpond/{id}/list/tempraturesystem")
     suspend fun getListTemperatureSystemFromFishPondID(
         @Path("id") fishPondId: Int
-    ) : GetListTemperatureSystemFromFishPondIDResponse
+    ): GetListTemperatureSystemFromFishPondIDResponse
+
+    @POST("/register-fishpond/create")
+    suspend fun postRegisterFishPondCreate(
+        @Body fishpondIotRequest: FishpondIotRequest
+    )
+
+    @PUT("/register-fishpond/update/{fishpondId}")
+    suspend fun postRegisterFishPondUpdate(
+        @Path("fishpondId") fishPondId: Int,
+        @Body fishpondIotRequest: FishpondIotRequest
+    )
+
+    @DELETE("/register-iot/delete/{fishpondId}")
+    suspend fun postRegisterFishPondDelete(
+        @Path("fishpondId") fishPondId: Int,
+        )
+
 
 }

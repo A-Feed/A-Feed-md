@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyAfeedDesign</string>
+    <string name="app_name">AFeed</string>
     <string name="welcome_back">Welcome Back!</string>
     <string name="notification">Notification</string>
     <string name="unit">Unit</string>
@@ -52,5 +52,7 @@
     <string name="_2">2</string>
     <string name="_3">3</string>
     <string name="_4">4</string>
+    <string name="save_this_edit">Save This Edit</string>
+    <string name="delete">Delete</string>
 
 </resources>

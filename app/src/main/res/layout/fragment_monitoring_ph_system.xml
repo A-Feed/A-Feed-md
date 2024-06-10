@@ -30,7 +30,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         tools:itemCount="10"
-        tools:listitem="@layout/list_card_iot_system_info" />
+        tools:listitem="@layout/item_card_iot_system_info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

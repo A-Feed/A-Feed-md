@@ -7,6 +7,18 @@
     android:layout_marginVertical="10dp">
 
     <TextView
+        android:id="@+id/textView_sequence_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/inter_bold"
+        android:text="@string/no"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView_Label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +26,7 @@
         android:fontFamily="@font/inter_bold"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_sequence_number"
         tools:text="Title" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -22,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@+id/textView_Label"
         app:layout_constraintTop_toBottomOf="@+id/textView_Label"
         app:startIconDrawable="@drawable/ic_id_card"
@@ -33,5 +46,27 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <CheckBox
+        android:id="@+id/checkBox_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_this_edit"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputlayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputlayout" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:textColor="@color/md_theme_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:fontFamily="@font/inter_regular"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

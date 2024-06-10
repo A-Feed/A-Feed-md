@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fishpondform.PhSystemFormActivity">
+    tools:context=".ui.fishpondform.phsystemform.PhSystemFormActivity">
 
 
     <include
@@ -37,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <include
-                    android:id="@+id/progress_form"
+                    android:id="@+id/include_progress_form_indicator"
                     layout="@layout/progress_fishpond_form" />
 
             </FrameLayout>
@@ -58,7 +58,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView5"
                 android:layout_width="0dp"
-                android:layout_height="400sp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,18 +76,20 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView_ph_system"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extendedFloatingActionButton2"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_add_ph_system"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:listitem="@layout/text_input_layout_with_label" />
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_text_input_layout_with_label" />
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                    android:id="@+id/extendedFloatingActionButton2"
+                    android:id="@+id/btn_add_ph_system"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/add"
@@ -101,7 +103,7 @@
 
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab"
+                android:id="@+id/fab_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"

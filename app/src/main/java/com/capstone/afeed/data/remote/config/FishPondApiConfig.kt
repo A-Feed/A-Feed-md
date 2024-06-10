@@ -36,7 +36,7 @@ class FishPondApiConfig {
 
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://www.youtube.com/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

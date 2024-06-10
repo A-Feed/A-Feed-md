@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fishpondform.TemperatureSystemFormActivity">
+    tools:context=".ui.fishpondform.temperaturesystemform.TemperatureSystemFormActivity">
 
 
     <include
@@ -87,7 +87,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView9"
-                    tools:listitem="@layout/text_input_layout_with_label" />
+                    tools:listitem="@layout/item_text_input_layout_with_label" />
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
                     android:id="@+id/extendedFloatingActionButton2"

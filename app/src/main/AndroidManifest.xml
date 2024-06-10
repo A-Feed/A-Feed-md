@@ -13,27 +13,42 @@
         android:theme="@style/Theme.Afeed"
         tools:targetApi="31">
         <activity
-            android:name=".ui.fishpondform.TemperatureSystemFormActivity"
+            android:name=".ui.fishpondform.temperaturesystemform.TemperatureSystemFormActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.fishpondform.PhSystemFormActivity"
+            android:name=".ui.fishpondform.phsystemform.PhSystemFormActivity"
             android:exported="false" />
+
+        <!--        this is for testing the view the easy way dont delete unless it production -Qushai -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.fishpondform.fishpondprofileform.FishPondFormActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.SplashScreen">
+            android:theme="@style/Theme.Afeed">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+<!--        <activity-->
+<!--            android:name=".SplashActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.App.SplashScreen">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
         <activity
-            android:name=".ui.fishpondform.AFeedingFormActivity"
+            android:name=".ui.fishpondform.afeedingform.AFeedingFormActivity"
             android:exported="false" />
-        <activity
-            android:name=".ui.fishpondform.FishPondFormActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ui.fishpondform.fishpondprofileform.FishPondFormActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".ui.monitoring.detail.MonitoringDetailActivity"
             android:exported="false" />

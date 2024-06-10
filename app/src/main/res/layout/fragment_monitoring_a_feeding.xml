@@ -36,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView8"
-            tools:listitem="@layout/list_column_a_feeding_schedule" />
+            tools:listitem="@layout/item_column_a_feeding_schedule" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
         tools:itemCount="10"
-        tools:listitem="@layout/list_card_iot_system_info" />
+        tools:listitem="@layout/item_card_iot_system_info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

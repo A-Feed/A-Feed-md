@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
              android:layout_height="wrap_content"
     android:layout_marginVertical="10dp"
@@ -13,7 +14,7 @@
         >
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView_sequence_number"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
@@ -26,14 +27,15 @@
 
         <TextView
             android:id="@+id/textView_Label_time"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/inter_bold"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/inter_bold"
             android:text="@string/time"
             android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/textView11"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintEnd_toEndOf="@+id/textView_sequence_number"
+            app:layout_constraintStart_toStartOf="@+id/textView_sequence_number"
+            app:layout_constraintTop_toBottomOf="@+id/textView_sequence_number" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputlayout_time"
@@ -66,21 +68,44 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputlayout_time" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/food_amount"
-            app:startIconDrawable="@drawable/ic_weight"
             android:layout_marginHorizontal="10dp"
+            android:hint="@string/food_amount"
             app:layout_constraintStart_toStartOf="@+id/textView_Label_food_amount"
-            app:layout_constraintTop_toBottomOf="@+id/textView_Label_food_amount">
+            app:layout_constraintTop_toBottomOf="@+id/textView_Label_food_amount"
+            app:startIconDrawable="@drawable/ic_weight">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputText_timw"
-                android:inputType="number"
+                android:id="@+id/inputText_food_amount"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:inputType="number" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+
+        <CheckBox
+            android:id="@+id/checkBox_item_schedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save_this_edit"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+        <Button
+            android:id="@+id/btn_delete_schedule"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:textColor="@color/md_theme_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:fontFamily="@font/inter_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

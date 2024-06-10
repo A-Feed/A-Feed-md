@@ -17,13 +17,13 @@
             android:layout_width="0dp"
             android:layout_height="10dp"
             android:background="@color/md_theme_onSurface"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView_2"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView_4"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView_1"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView_1" />
+            app:layout_constraintBottom_toBottomOf="@+id/circleImage_indicator_View_2"
+            app:layout_constraintEnd_toEndOf="@+id/circleImage_indicator_View_4"
+            app:layout_constraintStart_toStartOf="@+id/circleImage_indicator_View_1"
+            app:layout_constraintTop_toTopOf="@+id/circleImage_indicator_View_1" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView_1"
+            android:id="@+id/circleImage_indicator_View_1"
             android:layout_width="50dp"
             android:layout_height="70dp"
             android:src="@color/md_theme_surfaceContainer"
@@ -31,84 +31,86 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/text_indicator_View_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="@string/_1"
             android:textColor="@color/md_theme_onSecondaryContainer"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView_1"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView_1"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView_1"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView_1" />
+            app:layout_constraintBottom_toBottomOf="@+id/circleImage_indicator_View_1"
+            app:layout_constraintEnd_toEndOf="@+id/circleImage_indicator_View_1"
+            app:layout_constraintStart_toStartOf="@+id/circleImage_indicator_View_1"
+            app:layout_constraintTop_toTopOf="@+id/circleImage_indicator_View_1" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView_2"
+            android:id="@+id/circleImage_indicator_View_2"
             android:layout_width="50dp"
             android:layout_height="68dp"
             android:layout_marginHorizontal="10dp"
             android:src="@color/md_theme_surfaceContainer"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView_1"
+            app:layout_constraintStart_toEndOf="@+id/circleImage_indicator_View_1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/text_indicator_View_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="@string/_2"
             android:textColor="@color/md_theme_onSecondaryContainer"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView_2"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView_2"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView_2"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView_2" />
+            app:layout_constraintBottom_toBottomOf="@+id/circleImage_indicator_View_2"
+            app:layout_constraintEnd_toEndOf="@+id/circleImage_indicator_View_2"
+            app:layout_constraintStart_toStartOf="@+id/circleImage_indicator_View_2"
+            app:layout_constraintTop_toTopOf="@+id/circleImage_indicator_View_2" />
 
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView_3"
+            android:id="@+id/circleImage_indicator_View_3"
             android:layout_width="50dp"
             android:layout_height="70dp"
             android:layout_marginHorizontal="10dp"
             android:src="@color/md_theme_surfaceContainer"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView_2"
+            app:layout_constraintStart_toEndOf="@+id/circleImage_indicator_View_2"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/text_indicator_View_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="@string/_3"
             android:textColor="@color/md_theme_onSecondaryContainer"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView_3"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView_3"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView_3"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView_3" />
+            app:layout_constraintBottom_toBottomOf="@+id/circleImage_indicator_View_3"
+            app:layout_constraintEnd_toEndOf="@+id/circleImage_indicator_View_3"
+            app:layout_constraintStart_toStartOf="@+id/circleImage_indicator_View_3"
+            app:layout_constraintTop_toTopOf="@+id/circleImage_indicator_View_3" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView_4"
+            android:id="@+id/circleImage_indicator_View_4"
             android:layout_width="50dp"
             android:layout_height="70dp"
             android:layout_marginHorizontal="10dp"
             android:src="@color/md_theme_surfaceContainer"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView_3"
+            app:layout_constraintStart_toEndOf="@+id/circleImage_indicator_View_3"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/text_indicator_View_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_bold"
             android:text="@string/_4"
             android:textColor="@color/md_theme_onSecondaryContainer"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@+id/circleImageView_4"
-            app:layout_constraintEnd_toEndOf="@+id/circleImageView_4"
-            app:layout_constraintStart_toStartOf="@+id/circleImageView_4"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView_4" />
+            app:layout_constraintBottom_toBottomOf="@+id/circleImage_indicator_View_4"
+            app:layout_constraintEnd_toEndOf="@+id/circleImage_indicator_View_4"
+            app:layout_constraintStart_toStartOf="@+id/circleImage_indicator_View_4"
+            app:layout_constraintTop_toTopOf="@+id/circleImage_indicator_View_4" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
