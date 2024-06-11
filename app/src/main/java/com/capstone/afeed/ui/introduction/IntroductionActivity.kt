@@ -1,5 +1,6 @@
 package com.capstone.afeed.ui.introduction
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import com.capstone.afeed.R
 import com.capstone.afeed.adapter.ImageSliderAdapter
 import com.capstone.afeed.data.ImageDataSlide
 import com.capstone.afeed.databinding.ActivityIntroductionBinding
+import com.capstone.afeed.ui.main.MainActivity
 
 class IntroductionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroductionBinding
@@ -28,6 +30,13 @@ class IntroductionActivity : AppCompatActivity() {
         listImage.addAll(getListImageIntroduction())
         adapter = ImageSliderAdapter(listImage)
         binding.vpImageSlider.adapter = adapter
+
+        binding.tvSkip.setOnClickListener {
+            Intent(this, MainActivity::class.java).also { intent ->
+                startActivity(intent)
+                finish()
+            }
+        }
     }
 
     private fun getListImageIntroduction(): ArrayList<ImageDataSlide> {

@@ -58,5 +58,8 @@
     <string name="close">Close</string>
     <string name="list_of_registered_temperature_system">List of registered FishPond</string>
     <string name="cd_introduction">introduction</string>
+    <string name="home_main">Home</string>
+    <string name="dashboard_main">Dashboard</string>
+    <string name="settings_main">Settings</string>
 
 </resources>
