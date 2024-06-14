@@ -1,4 +1,4 @@
-package com.capstone.afeed.ui.fishpondform.phsystemform
+package com.capstone.afeed.ui.fishpondform.temperaturesystemform
 
 import android.content.Context
 import android.text.Editable
@@ -11,22 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.capstone.afeed.R
 import com.capstone.afeed.data.remote.request.FishpondIotRequest
 import com.capstone.afeed.databinding.ItemTextInputLayoutWithLabelBinding
+import com.capstone.afeed.ui.fishpondform.phsystemform.PhSystemAdapter
 
-class PhSystemAdapter() : ListAdapter<FishpondIotRequest.Phsystem, PhSystemAdapter.ViewHolder>(
-    DIFF_CALLBACK
-) {
-
+class TemperatureSystemAdapter : ListAdapter<FishpondIotRequest.Temperaturesystem,TemperatureSystemAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     interface AddNewListener {
-        fun insertItemListener(dataInput: FishpondIotRequest.Phsystem, id: Int)
+        fun insertItemListener(dataInput: FishpondIotRequest.Temperaturesystem, id: Int)
         fun deleteItemListener(id: Int)
 
     }
 
     var addNewListener: AddNewListener? = null
-    inner class ViewHolder(val binding: ItemTextInputLayoutWithLabelBinding, val context: Context) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: FishpondIotRequest.Phsystem, position: Int) {
+    inner class ViewHolder(val binding : ItemTextInputLayoutWithLabelBinding ,val context: Context ): RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: FishpondIotRequest.Temperaturesystem) {
             with(binding) {
                 checkBoxItem.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
@@ -57,11 +54,11 @@ class PhSystemAdapter() : ListAdapter<FishpondIotRequest.Phsystem, PhSystemAdapt
                 }
             }
         }
+
     }
 
-
     private fun insertDataListener(id: Int, idTopicMqtt: String) {
-        val dataInput = FishpondIotRequest.Phsystem(id, idTopicMqtt)
+        val dataInput = FishpondIotRequest.Temperaturesystem(id, idTopicMqtt)
         addNewListener?.insertItemListener(dataInput, id)
     }
 
@@ -76,25 +73,26 @@ class PhSystemAdapter() : ListAdapter<FishpondIotRequest.Phsystem, PhSystemAdapt
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(getItem(position), position)
+        holder.bind(getItem(position))
     }
 
-    companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FishpondIotRequest.Phsystem>() {
+    companion object{
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<FishpondIotRequest.Temperaturesystem>(){
             override fun areItemsTheSame(
-                oldItem: FishpondIotRequest.Phsystem,
-                newItem: FishpondIotRequest.Phsystem
+                oldItem: FishpondIotRequest.Temperaturesystem,
+                newItem: FishpondIotRequest.Temperaturesystem
             ): Boolean {
                 return oldItem.id == newItem.id
             }
 
             override fun areContentsTheSame(
-                oldItem: FishpondIotRequest.Phsystem,
-                newItem: FishpondIotRequest.Phsystem
+                oldItem: FishpondIotRequest.Temperaturesystem,
+                newItem: FishpondIotRequest.Temperaturesystem
             ): Boolean {
                 return oldItem.id == newItem.id
             }
 
         }
     }
+
 }

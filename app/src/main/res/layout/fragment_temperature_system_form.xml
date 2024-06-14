@@ -2,17 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fishpondform.temperaturesystemform.TemperatureSystemFormActivity">
-
-
-    <include
-        android:id="@+id/included_toolbar_main"
-        layout="@layout/toolbar_main"
-        android:elevation="1000dp" />
-
+    tools:context=".ui.fishpondform.temperaturesystemform.TemperatureSystemFormFragment">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -20,13 +12,12 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineappbar">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
             <FrameLayout
                 android:id="@+id/wrapper_progress_form"
@@ -39,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <include
-                    android:id="@+id/progress_form"
+                    android:id="@+id/include_progress_form_indicator"
                     layout="@layout/progress_fishpond_form" />
 
             </FrameLayout>
@@ -49,10 +40,10 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:fontFamily="@font/inter_bold"
                 android:text="@string/temperature_system"
                 android:textSize="22sp"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/wrapper_progress_form" />
@@ -60,7 +51,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView5"
                 android:layout_width="0dp"
-                android:layout_height="400sp"
+                android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:layout_marginTop="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -79,24 +70,25 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recylerView_form_temperature_system"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
                     android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toTopOf="@+id/extendedFloatingActionButton2"
+                    tools:itemCount="2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView9"
                     tools:listitem="@layout/item_text_input_layout_with_label" />
 
                 <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                    android:id="@+id/extendedFloatingActionButton2"
+                    android:id="@+id/btn_add_input_temperature_system"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/add"
                     android:text="@string/add"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recylerView_form_temperature_system"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -104,7 +96,7 @@
 
 
             <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/extended_fab"
+                android:id="@+id/fab_save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|end"
@@ -121,13 +113,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineappbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="66dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

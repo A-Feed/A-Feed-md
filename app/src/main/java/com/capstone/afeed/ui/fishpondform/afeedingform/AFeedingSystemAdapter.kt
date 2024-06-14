@@ -26,8 +26,6 @@ class AFeedingSystemAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FishpondIotRequest.AFeedingSystem, position: Int) {
             with(binding) {
-                textViewSequenceNumber.text =
-                    context.getString(R.string.no, (item.id).toString())
                 checkBoxItem.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
                         insertDataListener(item.id, inputText.text.toString())

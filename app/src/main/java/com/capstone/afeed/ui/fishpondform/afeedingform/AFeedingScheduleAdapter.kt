@@ -20,6 +20,8 @@ class AFeedingScheduleAdapter :
     ) {
     interface AddNewListener {
         fun inputDataListener(dataInput: FishpondIotRequest.AFeedingSchedule, id: Int)
+        fun deleteItemListener(id: Int)
+
     }
 
     var addNewListener: AddNewListener? = null
@@ -83,12 +85,15 @@ class AFeedingScheduleAdapter :
 
                 inputTextTime.setText(item.time)
                 inputTextFoodAmount.setText(item.foodAmount)
+                btnDeleteSchedule.setOnClickListener {
+                    addNewListener?.deleteItemListener(item.id)
+                }
             }
         }
 
     }
 
-    fun inputDataListener(id: Int, timeInput: String, foodAmountInput: String) {
+    private fun inputDataListener(id: Int, timeInput: String, foodAmountInput: String) {
         val dataInput = FishpondIotRequest.AFeedingSchedule(id, foodAmountInput, timeInput)
         addNewListener?.inputDataListener(dataInput, id)
     }

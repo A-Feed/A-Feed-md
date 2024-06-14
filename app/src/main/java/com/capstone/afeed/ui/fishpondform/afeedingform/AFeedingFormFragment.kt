@@ -1,68 +1,48 @@
 package com.capstone.afeed.ui.fishpondform.afeedingform
 
-import android.content.Intent
-import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import androidx.activity.enableEdgeToEdge
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.afeed.R
 import com.capstone.afeed.data.remote.request.FishpondIotRequest
-import com.capstone.afeed.databinding.ActivityAfeedingFormBinding
+import com.capstone.afeed.databinding.FragmentAFeedingFormBinding
 import com.capstone.afeed.ui.fishpondform.FishPondFormViewModel
 import com.capstone.afeed.ui.fishpondform.FishPondFormViewModelFactory
-import com.capstone.afeed.ui.fishpondform.fishpondprofileform.FishPondFormActivity
-import com.capstone.afeed.ui.fishpondform.phsystemform.PhSystemFormActivity
-import kotlin.random.Random
 
-class AFeedingFormActivity : AppCompatActivity() {
+class AFeedingFormFragment : Fragment() {
 
-    private lateinit var binding: ActivityAfeedingFormBinding
-    private val fishPondFormViewModel: FishPondFormViewModel by viewModels {
+
+    private var _binding : FragmentAFeedingFormBinding? = null
+    private val binding get() = _binding!!
+    private val fishPondFormViewModel: FishPondFormViewModel by activityViewModels {
         FishPondFormViewModelFactory.getInstance(
-            this@AFeedingFormActivity
+            requireContext()
         )
     }
     private lateinit var aFeedingScheduleAdapter: AFeedingScheduleAdapter
     private lateinit var aFeedingSystemAdapter: AFeedingSystemAdapter
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        binding = ActivityAfeedingFormBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentAFeedingFormBinding.inflate(inflater,container,false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initializeAdapter()
-        initializePreviousInputToViewModel()
         setupAdapter()
         setupObserver()
         setupView()
         setupRecylerView()
     }
 
-    private fun initializePreviousInputToViewModel() {
-        val fishpondData = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra<FishpondIotRequest>(
-                FishPondFormViewModel.FISHPONDDATA_EXTRAS,
-                FishpondIotRequest::class.java
-            )
-        } else {
-            @Suppress("DEPRECATION")
-            intent.getParcelableExtra<FishpondIotRequest>(FishPondFormViewModel.FISHPONDDATA_EXTRAS)
-        }
-        if (fishpondData != null) {
-            fishPondFormViewModel.saveFishPondData(fishpondData)
-        }
-
-    }
 
     private fun setupAdapter() {
         aFeedingScheduleAdapter.addNewListener = object : AFeedingScheduleAdapter.AddNewListener {
@@ -71,6 +51,10 @@ class AFeedingFormActivity : AppCompatActivity() {
                 id: Int
             ) {
                 fishPondFormViewModel.editInputDataAFeedingSchedule(id, dataInput)
+            }
+
+            override fun deleteItemListener(id: Int) {
+                fishPondFormViewModel.deleteInputDataAFeedingSchedule(id)
             }
         }
         aFeedingSystemAdapter.addNewListener = object : AFeedingSystemAdapter.AddNewListener {
@@ -95,9 +79,9 @@ class AFeedingFormActivity : AppCompatActivity() {
     private fun setupView() {
         with(binding) {
             includeProgressFormIndicator.apply {
-                textIndicatorView1.setTextColor(getColor(R.color.md_theme_onPrimary))
+                textIndicatorView1.setTextColor(requireContext().getColor(R.color.md_theme_onPrimary))
                 circleImageIndicatorView1.setImageResource(R.color.md_theme_primary)
-                textIndicatorView2.setTextColor(getColor(R.color.md_theme_onPrimary))
+                textIndicatorView2.setTextColor(requireContext().getColor(R.color.md_theme_onPrimary))
                 circleImageIndicatorView2.setImageResource(R.color.md_theme_primary)
             }
             btnAddAFeedingSchedule.setOnClickListener {
@@ -107,31 +91,21 @@ class AFeedingFormActivity : AppCompatActivity() {
                 addAfeedingSystem()
             }
             fabNext.setOnClickListener {
-                val intent = Intent(this@AFeedingFormActivity, PhSystemFormActivity::class.java)
-                    .putExtra(
-                        FishPondFormViewModel.FISHPONDDATA_EXTRAS,
-                        fishPondFormViewModel.fishpondData.value
-                    )
-                startActivity(intent)
+                findNavController().navigate(AFeedingFormFragmentDirections.actionAFeedingFormFragmentToPhSystemFormFragment())
             }
         }
     }
 
     private fun setupObserver() {
         with(fishPondFormViewModel) {
-            fishpondAFeedingSchedule.observe(this@AFeedingFormActivity) {
+            fishpondAFeedingSchedule.observe(requireActivity()) {
                 aFeedingScheduleAdapter.submitList(it.toList())
             }
-            fishpondAFeedingSystem.observe(this@AFeedingFormActivity) {
+            fishpondAFeedingSystem.observe(requireActivity()) {
                 aFeedingSystemAdapter.submitList(it.toList())
-                Log.i("datasjumlahatas",it.toString())
-                Log.i("datasjumlahatas",aFeedingSystemAdapter.itemCount.toString())
-
             }
-            fishpondData.observe(this@AFeedingFormActivity) {
-                Log.i("datas", it.toString())
+            fishpondData.observe(requireActivity()) {
                 aFeedingSystemAdapter.submitList(it.afeeding?.aFeedingSystem?.toList())
-                Log.i("datasjumlah",aFeedingSystemAdapter.itemCount.toString())
             }
         }
 
@@ -141,7 +115,7 @@ class AFeedingFormActivity : AppCompatActivity() {
         with(binding) {
             recylerViewAFeedingSchedule.apply {
                 layoutManager = LinearLayoutManager(
-                    this@AFeedingFormActivity,
+                    requireContext(),
                     LinearLayoutManager.VERTICAL,
                     false
                 )
@@ -149,7 +123,7 @@ class AFeedingFormActivity : AppCompatActivity() {
             }
             recylerViewAFeedingSystem.apply {
                 layoutManager = LinearLayoutManager(
-                    this@AFeedingFormActivity,
+                    requireContext(),
                     LinearLayoutManager.VERTICAL,
                     false
                 )
@@ -169,6 +143,12 @@ class AFeedingFormActivity : AppCompatActivity() {
         fishPondFormViewModel.addAFeedingSystem(
             FishpondIotRequest.AFeedingSystem(aFeedingSystemAdapter.itemCount, "")
         )
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
 

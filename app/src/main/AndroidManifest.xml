@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,53 +15,31 @@
         android:theme="@style/Theme.Afeed"
         tools:targetApi="31">
         <activity
-            android:name=".ui.fishpondform.temperaturesystemform.TemperatureSystemFormActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.fishpondform.phsystemform.PhSystemFormActivity"
+            android:name=".ui.introduction.IntroductionActivity"
             android:exported="false" />
 
+        <!-- <activity -->
+        <!-- android:name=".SplashActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:theme="@style/Theme.App.SplashScreen"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+        <!-- this is for testing the view the easy way dont delete unless it production - Qushai -->
         <activity
-            android:name=".ui.introduction.IntroductionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.introduction.IntroductionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Afeed">
+            android:name=".ui.fishpondform.FishPondFormActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--        this is for testing the view the easy way dont delete unless it production -Qushai -->
-
-<!--        <activity-->
-<!--            android:name=".SplashActivity"-->
-<!--            android:exported="true"-->
-<!--            android:theme="@style/Theme.App.SplashScreen">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-
-        <activity
-            android:name=".ui.fishpondform.afeedingform.AFeedingFormActivity"
-            android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".ui.fishpondform.fishpondprofileform.FishPondFormActivity"-->
-<!--            android:exported="false" />-->
         <activity
             android:name=".ui.monitoring.detail.MonitoringDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.monitoring.MonitoringActivity"
             android:exported="false" />
     </application>
 
