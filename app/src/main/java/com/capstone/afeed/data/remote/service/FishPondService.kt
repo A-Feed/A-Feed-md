@@ -39,7 +39,7 @@ interface FishPondService {
         @Path("id") fishPondId: Int
     ): GetListPhSystemFromFishPondIDResponse
 
-    @GET("/fishpond/{id}/list/tempraturesystem")
+    @GET("/fishpond/{id}/list/temperaturesystem")
     suspend fun getListTemperatureSystemFromFishPondID(
         @Path("id") fishPondId: Int
     ): GetListTemperatureSystemFromFishPondIDResponse

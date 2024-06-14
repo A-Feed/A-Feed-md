@@ -22,11 +22,11 @@ data class FishpondIotRequest(
     @Parcelize
     data class Fishpond(
         val fishpondDescription: String,
-        val fishpondName: String
+        val fishpondName: String,
+        val fishType : String
     ) : Parcelable
 
     @Parcelize
-
     data class Phsystem(
         val id: Int,
         val idTopicMqtt: String

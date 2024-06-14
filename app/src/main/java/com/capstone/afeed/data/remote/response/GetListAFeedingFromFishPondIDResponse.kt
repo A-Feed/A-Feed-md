@@ -19,6 +19,8 @@ data class GetListAFeedingFromFishPondIDResponse(
     data class AFeedingSystem(
         @SerializedName("feedingProgress")
         val feedingProgress: String,
+        @SerializedName("idTopicMqtt")
+        val idTopicMqtt: String,
         @SerializedName("id_a_feeding")
         val idAFeeding: String,
         @SerializedName("status")
@@ -28,6 +30,8 @@ data class GetListAFeedingFromFishPondIDResponse(
     data class Schedule(
         @SerializedName("foodAmount")
         val foodAmount: String,
+        @SerializedName("id_a_feeding_schedule")
+        val idAFeedingSchedule: String,
         @SerializedName("time")
         val time: String
     )

@@ -11,6 +11,8 @@ data class GetListPhSystemFromFishPondIDResponse(
     data class Data(
         @SerializedName("id_ph_system")
         val idPhSystem: String,
+        @SerializedName("idTopicMqtt")
+        val idTopicMqtt: String,
         @SerializedName("ph_score")
         val phScore: String,
         @SerializedName("status")

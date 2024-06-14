@@ -36,7 +36,7 @@ class FishPondApiConfig {
 
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://www.youtube.com/")
+                .baseUrl("https://7106-2001-448a-2018-2b19-a83e-52ce-1412-2b9d.ngrok-free.app/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
