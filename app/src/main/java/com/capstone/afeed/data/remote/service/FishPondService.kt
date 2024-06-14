@@ -5,6 +5,7 @@ import com.capstone.afeed.data.remote.response.GetDetailFishPondResponse
 import com.capstone.afeed.data.remote.response.GetListAFeedingFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetListFishPondResponse
 import com.capstone.afeed.data.remote.response.GetListPhSystemFromFishPondIDResponse
+import com.capstone.afeed.data.remote.response.GetListRegisteredFishpondWithSystemMeanScore
 import com.capstone.afeed.data.remote.response.GetListTemperatureSystemFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetTotalRegisteredFishPondResponse
 import retrofit2.http.Body
@@ -20,6 +21,11 @@ interface FishPondService {
     suspend fun getTotalRegisteredFishpond(
         @Path("id") userId: Int
     ): GetTotalRegisteredFishPondResponse
+
+    @GET("/registered/iotdevice/mean-score/{id}")
+    suspend fun getListRegisteredFishpondWithSystemMeanScore(
+        @Path("id") userId: Int
+    ) : GetListRegisteredFishpondWithSystemMeanScore
 
     @GET("/list/fishpond")
     suspend fun getListFishPond(): GetListFishPondResponse

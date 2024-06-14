@@ -34,6 +34,28 @@ private constructor(private val fishPondService: FishPondService) {
         }
     }
 
+    suspend fun getListRegisteredFishpondWithSystemMeanScore(
+        userId: Int
+    ) = liveData {
+        emit(ResponseState.Loading)
+        try {
+            val result = fishPondService.getListRegisteredFishpondWithSystemMeanScore(userId)
+            emit(ResponseState.Success(result))
+        } catch (e: HttpException) {
+            try {
+                val errorMessage = Gson().fromJson<ErrorResponse>(
+                    e.response()?.errorBody()?.string(),
+                    ErrorResponse::class.java
+                )
+                emit(ResponseState.Error(errorMessage.message))
+            }catch (e : Exception){
+                emit(ResponseState.Error("Unknown Error"))
+            }
+        } catch (e: Exception) {
+            emit(ResponseState.Error("Unknown Error"))
+        }
+    }
+
     suspend fun getListFishPond() = liveData {
         emit(ResponseState.Loading)
         try {
