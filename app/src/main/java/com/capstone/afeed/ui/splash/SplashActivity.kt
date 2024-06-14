@@ -1,4 +1,4 @@
-package com.capstone.afeed
+package com.capstone.afeed.ui.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
