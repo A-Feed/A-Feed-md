@@ -5,7 +5,7 @@
     <string name="unit">Unit</string>
     <string name="_0">0</string>
     <string name="monitoring_activty_title">Monitoring Fishpond</string>
-    <string name="monitoring_activity_title">click one of the card below to see the detail data and connect it to get Real time data and static data from A-Feeder</string>
+    <string name="monitoring_activity_desc">click one of the card below to see the detail data about specific fishpond , and connected system </string>
     <string name="list_of_registered_fishpond_title">List of registered FishPond</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="score">Score</string>
@@ -14,10 +14,11 @@
     <string name="colon">:</string>
     <string name="cause">Cause</string>
     <string name="temperature_total">Temperature Total</string>
+    <string name="temperature_score">Temperature Score</string>
     <string name="ph_total_score">Ph Total Score</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
-    <string name="base_feeding_progress">Base Feeding Progress</string>
+    <string name="feeding_progress">Feeding Progress</string>
     <string name="connected_device">Connected Device</string>
     <string name="automatic_feed">A-Feeding</string>
     <string name="ph_system">Ph System</string>
@@ -28,7 +29,7 @@
     <string name="status">Status</string>
     <string name="no">No.%s</string>
     <string name="time">Time</string>
-    <string name="kg">$s Kg</string>
+    <string name="kg">%s Kg</string>
     <string name="feeding_schedule">Feeding Schedule</string>
     <string name="list_of_registered_a_feeding">List of registered A-Feeding</string>
     <string name="list_of_registered_ph_system">List of registered Ph System</string>
@@ -43,7 +44,7 @@
     <string name="welcome_to_afeed">Welcome To A-Feed!</string>
     <string name="discover">Discover Our Capabilities</string>
     <string name="skip">Skip</string>
-    <string name="a_feeding_system">A-Feeding</string>
+    <string name="a_feeding_system">A-Feeding System</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
@@ -56,7 +57,7 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="close">Close</string>
-    <string name="list_of_registered_temperature_system">List of registered FishPond</string>
+    <string name="list_of_registered_temperature_system">List of Temperature System</string>
     <string name="cd_introduction">introduction</string>
     <string name="home_main">Home</string>
     <string name="dashboard_main">Dashboard</string>
@@ -65,5 +66,16 @@
     <string name="sign_in_main">Sign in to take advantage of our service</string>
     <string name="sign_now">Sign Now</string>
     <string name="button_icon">Icon Next</string>
-
+    <string name="fishpond">Fishpond</string>
+    <string name="tablayout_registered_system">Tablayout Registered System</string>
+    <string name="fish_type">Fish Type</string>
+    <string name="attention">Attention</string>
+    <string name="list_empty">%s Is Empty</string>
+    <string-array name="fish_type_spinner">
+        <item>Select an Fish Type</item>
+        <item>Nila</item>
+        <item>Lele</item>
+        <item>Patin</item>
+        <item>Gurame</item>
+    </string-array>
 </resources>

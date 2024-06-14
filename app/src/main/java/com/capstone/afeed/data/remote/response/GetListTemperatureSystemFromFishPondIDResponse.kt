@@ -11,6 +11,8 @@ data class GetListTemperatureSystemFromFishPondIDResponse(
 data class Data(
     @SerializedName("id_temp_system")
     val idTempSystem: String,
+    @SerializedName("idTopicMqtt")
+    val idTopicMqtt: String,
     @SerializedName("status")
     val status: String,
     @SerializedName("temperatureScore")

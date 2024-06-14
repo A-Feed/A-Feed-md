@@ -28,8 +28,6 @@ class PhSystemAdapter() : ListAdapter<FishpondIotRequest.Phsystem, PhSystemAdapt
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: FishpondIotRequest.Phsystem, position: Int) {
             with(binding) {
-                textViewSequenceNumber.text =
-                    context.getString(R.string.no, (item.id).toString())
                 checkBoxItem.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
                         insertDataListener(item.id, inputText.text.toString())

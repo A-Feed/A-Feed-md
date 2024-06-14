@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fishpond_form_navigation"
+    app:startDestination="@id/fishPondProfileFormFragment">
+
+    <fragment
+        android:id="@+id/fishPondProfileFormFragment"
+        android:name="com.capstone.afeed.ui.fishpondform.fishpondprofileform.FishPondProfileFormFragment"
+        android:label="fragment_fish_pond_profile_form"
+        tools:layout="@layout/fragment_fish_pond_profile_form" >
+        <action
+            android:id="@+id/action_fishPondProfileFormFragment_to_AFeedingFormFragment"
+            app:destination="@id/AFeedingFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/AFeedingFormFragment"
+        android:name="com.capstone.afeed.ui.fishpondform.afeedingform.AFeedingFormFragment"
+        android:label="fragment_a_feeding_form"
+        tools:layout="@layout/fragment_a_feeding_form" >
+        <action
+            android:id="@+id/action_AFeedingFormFragment_to_phSystemFormFragment"
+            app:destination="@id/phSystemFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/phSystemFormFragment"
+        android:name="com.capstone.afeed.ui.fishpondform.phsystemform.PhSystemFormFragment"
+        android:label="fragment_ph_system_form"
+        tools:layout="@layout/fragment_ph_system_form" >
+        <action
+            android:id="@+id/action_phSystemFormFragment_to_temperatureSystemFormFragment"
+            app:destination="@id/temperatureSystemFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/temperatureSystemFormFragment"
+        android:name="com.capstone.afeed.ui.fishpondform.temperaturesystemform.TemperatureSystemFormFragment"
+        android:label="fragment_temperature_system_form"
+        tools:layout="@layout/fragment_temperature_system_form" />
+</navigation>

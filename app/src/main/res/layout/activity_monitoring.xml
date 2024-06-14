@@ -9,12 +9,10 @@
     android:fillViewport="true"
     tools:context=".ui.monitoring.MonitoringActivity">
 
-
     <include
         android:id="@+id/included_toolbar_main"
         layout="@layout/toolbar_main"
         android:elevation="1000dp" />
-
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -34,6 +32,7 @@
                 android:id="@+id/constraintLayout"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
                 android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
@@ -52,10 +51,10 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textView_fishpond_total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="-20dp"
+                    android:layout_marginTop="-30dp"
                     android:text="@string/_0"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -68,12 +67,15 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/unit"
+                    android:text="@string/fishpond"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.506"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView_fishpond_total"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -93,7 +95,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/monitoring_activity_title"
+                android:text="@string/monitoring_activity_desc"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline4"
                 app:layout_constraintStart_toStartOf="@+id/textView2"
@@ -103,7 +105,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/list_of_registered_fishpond_title"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -112,6 +114,7 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recylerView_registered_fishpond"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"

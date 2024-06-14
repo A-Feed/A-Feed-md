@@ -44,7 +44,7 @@ class FishPondFormViewModel(
         val updateFishpondData = _fispondData.value
         _fispondData.postValue(
             FishpondIotRequest(
-                fishpond = datas ?: FishpondIotRequest.Fishpond("", ""),
+                fishpond = datas,
                 temperaturesystem = updateFishpondData?.temperaturesystem,
                 afeeding = updateFishpondData?.afeeding,
                 phsystem = updateFishpondData?.phsystem
@@ -236,14 +236,6 @@ class FishPondFormViewModel(
         }
     }
 //    FISHPOND TEMPERATURE SYSTEM
-
-//    fun savePhsystem(datas: List<FishpondIotRequest.Phsystem>) {
-//        _fishpondPhsystem.postValue(datas)
-//    }
-//
-//    fun saveTemperaturesystem(datas: List<FishpondIotRequest.Temperaturesystem>) {
-//        _fishpondTemperaturesystem.postValue(datas)
-//    }
 
     fun postRegisterFishPondCreate(fishpondIotRequest: FishpondIotRequest) =
         liveData {

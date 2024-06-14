@@ -14,7 +14,7 @@ data class GetDetailFishPondResponse(
         @SerializedName("fishpond")
         val fishpond: Fishpond,
         @SerializedName("fishpondScore")
-        val fishpondScore: FishpondScore
+        val fishpondScore: FishpondScore,
     )
 
     data class ConnectedDevice(
@@ -32,7 +32,9 @@ data class GetDetailFishPondResponse(
         @SerializedName("fishpondDescription")
         val fishpondDescription: String,
         @SerializedName("fishpondName")
-        val fishpondName: String
+        val fishpondName: String,
+        @SerializedName("feedingProgress")
+        val feedingProgress: String
     )
 
     data class FishpondScore(

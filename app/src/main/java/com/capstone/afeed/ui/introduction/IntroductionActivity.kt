@@ -16,6 +16,7 @@ class IntroductionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIntroductionBinding
     private lateinit var adapter: ImageSliderAdapter
     private val listImage = ArrayList<ImageDataSlide>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -18,18 +18,16 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineappbar"
-        >
+        app:layout_constraintTop_toTopOf="@+id/guidelineappbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView2"
+                android:id="@+id/card_fishpond_predict"
                 android:layout_width="0dp"
-                android:layout_height="180dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="3dp"
@@ -38,9 +36,8 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +47,7 @@
                         android:id="@+id/textView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="@font/inter_bold"
                         android:text="@string/fishpond_score_amp_status"
                         android:textSize="18sp"
@@ -69,10 +67,11 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/textView"
+                        android:id="@+id/textView_score_fishpond"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
+                        android:layout_marginTop="-5dp"
+                        android:gravity="center"
                         android:text="@string/_0"
                         android:textSize="26sp"
                         android:textStyle="bold"
@@ -90,8 +89,8 @@
                         android:text="@string/score"
                         android:textSize="16sp"
                         android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="@+id/textView"
-                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintEnd_toEndOf="@+id/textView_score_fishpond"
+                        app:layout_constraintStart_toStartOf="@+id/textView_score_fishpond"
                         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
                     <View
@@ -110,10 +109,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/view"
-
                         app:layout_constraintTop_toTopOf="@+id/view">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
 
                         <TextView
                             android:layout_width="120dp"
@@ -126,9 +129,13 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
+
+                        </LinearLayout>
+
 
                         <TextView
+                            android:id="@+id/textView_fishpond_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -141,12 +148,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
                         app:layout_constraintHeight_max="50dp"
                         app:layout_constraintStart_toStartOf="@+id/linearLayout"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                        <TextView
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_regular"
@@ -157,9 +171,12 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
+
+                    </LinearLayout>
 
                         <TextView
+                            android:id="@+id/textView_fishpond_cause"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -172,11 +189,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+
                         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
                         app:layout_constraintStart_toStartOf="@+id/linearLayout2"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-                        <TextView
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_regular"
@@ -187,9 +212,11 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
 
+                    </LinearLayout>
                         <TextView
+                            android:id="@+id/textView_fishpond_ph_total_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -207,7 +234,12 @@
                         app:layout_constraintStart_toStartOf="@+id/linearLayout3"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-                        <TextView
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                    <TextView
                             android:layout_width="120dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_regular"
@@ -218,9 +250,11 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
+                    </LinearLayout>
 
-                        <TextView
+
+                        <TextView android:id="@+id/textView_fishpond_temperature_total_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -234,20 +268,19 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView3"
+                android:id="@+id/card_fishpond_profile"
                 android:layout_width="0dp"
-                android:layout_height="290dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="3dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                app:layout_constraintTop_toBottomOf="@+id/card_fishpond_predict">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout1"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -257,6 +290,7 @@
                         android:id="@+id/textView61"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
                         android:fontFamily="@font/inter_bold"
                         android:text="@string/fishpond_profile"
                         android:textSize="18sp"
@@ -276,17 +310,19 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/textView62"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="1dp"
+                        android:id="@+id/textView_feeding_progress"
+                        android:layout_width="25dp"
+                        android:layout_height="30dp"
+                        android:gravity="center"
                         android:text="@string/_0"
                         android:textSize="26sp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@+id/imageView62"
                         app:layout_constraintEnd_toEndOf="@+id/imageView62"
+                        app:layout_constraintHorizontal_bias="0.493"
                         app:layout_constraintStart_toStartOf="@+id/imageView62"
                         app:layout_constraintTop_toTopOf="@+id/imageView62"
+                        app:layout_constraintVertical_bias="0.45"
                         tools:text="30" />
 
                     <TextView
@@ -295,7 +331,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-5dp"
                         android:gravity="center"
-                        android:text="@string/base_feeding_progress"
+                        android:text="@string/feeding_progress"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/imageView62"
@@ -318,25 +354,33 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/view2"
                         app:layout_constraintTop_toTopOf="@+id/view2">
 
-                        <TextView
-                            android:layout_width="120dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_regular"
-                            android:text="@string/name" />
 
-                        <TextView
-                            android:layout_width="15dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/inter_bold"
-                            android:gravity="center"
-                            tools:text="@string/colon" />
-
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_regular"
+                                android:text="@string/name" />
+
+                            <TextView
+                                android:layout_width="15dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/inter_bold"
+                                android:gravity="center"
+                                android:text="@string/colon" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView_fishpond_name"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             tools:text="Pond 1" />
@@ -350,7 +394,6 @@
                         android:layout_marginTop="5dp"
                         android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
-                        app:layout_constraintHeight_max="100dp"
                         app:layout_constraintStart_toStartOf="@+id/linearLayout5"
                         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
@@ -369,15 +412,14 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/inter_bold"
                                 android:gravity="center"
-                                tools:text="@string/colon" />
+                                android:text="@string/colon" />
                         </LinearLayout>
 
                         <TextView
+                            android:id="@+id/textView_fishpond_description"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:ellipsize="end"
                             android:fontFamily="@font/inter_bold"
-                            android:maxLines="4"
                             android:textSize="12sp"
                             tools:text="@string/lorem" />
                     </LinearLayout>
@@ -421,9 +463,10 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
 
                         <TextView
+                            android:id="@+id/textView_total_afeeding"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -451,9 +494,10 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
 
                         <TextView
+                            android:id="@+id/textView_total_ph_system"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -481,9 +525,10 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
                             android:gravity="center"
-                            tools:text="@string/colon" />
+                            android:text="@string/colon" />
 
                         <TextView
+                            android:id="@+id/textView_total_temperature_system"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/inter_bold"
@@ -497,40 +542,25 @@
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+                android:id="@+id/tabLayout_registered_system"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
+                android:contentDescription="@string/tablayout_registered_system"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView3">
+                app:layout_constraintTop_toBottomOf="@+id/card_fishpond_profile"
+                app:tabGravity="center"
+                app:tabMode="scrollable" />
 
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/automatic_feed" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ph_system" />
-
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/temperature_system" />
-
-
-            </com.google.android.material.tabs.TabLayout>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/viewpager_monitoing_detail"
                 android:layout_width="0dp"
-                android:layout_height="500dp"
+                android:layout_height="600dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline6"
                 app:layout_constraintStart_toStartOf="@+id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout_registered_system" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline5"
