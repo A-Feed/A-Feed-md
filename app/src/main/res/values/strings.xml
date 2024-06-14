@@ -61,5 +61,9 @@
     <string name="home_main">Home</string>
     <string name="dashboard_main">Dashboard</string>
     <string name="settings_main">Settings</string>
+    <string name="logo_app">Logo Application</string>
+    <string name="sign_in_main">Sign in to take advantage of our service</string>
+    <string name="sign_now">Sign Now</string>
+    <string name="button_icon">Icon Next</string>
 
 </resources>
