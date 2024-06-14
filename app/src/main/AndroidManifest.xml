@@ -23,8 +23,6 @@
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.Afeed">
-            android:name=".ui.fishpondform.FishPondFormActivity"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
