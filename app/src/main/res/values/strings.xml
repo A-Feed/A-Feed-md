@@ -59,6 +59,13 @@
     <string name="close">Close</string>
     <string name="list_of_registered_temperature_system">List of Temperature System</string>
     <string name="cd_introduction">introduction</string>
+    <string name="home_main">Home</string>
+    <string name="dashboard_main">Dashboard</string>
+    <string name="settings_main">Settings</string>
+    <string name="logo_app">Logo Application</string>
+    <string name="sign_in_main">Sign in to take advantage of our service</string>
+    <string name="sign_now">Sign Now</string>
+    <string name="button_icon">Icon Next</string>
     <string name="fishpond">Fishpond</string>
     <string name="tablayout_registered_system">Tablayout Registered System</string>
     <string name="fish_type">Fish Type</string>
