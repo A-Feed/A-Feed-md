@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.ActivityMainBinding
+import com.capstone.afeed.ui.main.dashboard.DashboardFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -71,6 +71,9 @@
     <string name="fish_type">Fish Type</string>
     <string name="attention">Attention</string>
     <string name="list_empty">%s Is Empty</string>
+    <string name="total_temperature">Total Temperature</string>
+    <string name="total_ph">Total Ph</string>
+    <string name="list_service">List Service</string>
     <string-array name="fish_type_spinner">
         <item>Select an Fish Type</item>
         <item>Nila</item>

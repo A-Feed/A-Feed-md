@@ -33,20 +33,6 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="false" />
-
-        <!--        this is for testing the view the easy way dont delete unless it production -Qushai -->
-
-        <!--        <activity-->
-        <!--            android:name=".SplashActivity"-->
-        <!--            android:exported="true"-->
-        <!--            android:theme="@style/Theme.App.SplashScreen">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.MAIN" />-->
-
-        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
-
         <activity
             android:name=".ui.fishpondform.FishPondFormActivity"
             android:exported="false" />
