@@ -4,6 +4,7 @@ circleimageview = "3.1.0"
 converterGson = "2.11.0"
 coreSplashscreen = "1.0.1"
 datastorePreferences = "1.1.1"
+fragmentKtx = "1.7.1"
 glide = "4.16.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
@@ -16,13 +17,17 @@ loggingInterceptor = "4.12.0"
 material = "1.12.0"
 activity = "1.9.0"
 constraintlayout = "2.1.4"
+navigationFragmentKtx = "2.7.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleLivedataKtx" }
+androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationFragmentKtx" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
