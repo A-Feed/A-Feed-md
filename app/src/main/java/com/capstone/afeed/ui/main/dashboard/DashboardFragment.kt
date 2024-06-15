@@ -51,7 +51,6 @@ class DashboardFragment : Fragment() {
                 NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
                 NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
                 NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
-
                 )
         )
     }
