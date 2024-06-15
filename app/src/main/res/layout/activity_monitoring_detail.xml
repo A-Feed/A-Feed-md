@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.monitoring.detail.MonitoringDetailActivity">
 
-
     <include
         android:id="@+id/included_toolbar_main"
         layout="@layout/toolbar_main"
@@ -595,7 +594,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="66dp" />
+        app:layout_constraintGuide_end="665dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
