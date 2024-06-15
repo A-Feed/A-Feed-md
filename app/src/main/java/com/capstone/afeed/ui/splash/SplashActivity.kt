@@ -12,6 +12,7 @@ import com.capstone.afeed.ui.introduction.IntroductionActivity
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Thread.sleep(1000L)
         installSplashScreen()
         Intent(this, IntroductionActivity::class.java).also {
             startActivity(it)

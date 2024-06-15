@@ -12,6 +12,7 @@ import com.capstone.afeed.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var isLogin = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,23 +24,27 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        mainFragment(HomeFragmentBeforeLogIn())
 
         binding.bottomNavigation.setOnItemSelectedListener { menu ->
             when (menu.itemId) {
-                R.id.menu_home -> mainFragment(HomeFragmentBeforeLogIn())
+                R.id.menu_home -> mainFragment(HomeFragment())
                 R.id.menu_dashboard -> mainFragment(DashboardFragment())
                 R.id.menu_settings -> mainFragment(SettingsFragment())
             }
             true
         }
 
+        if (!isLogin) {
+            mainFragment(HomeFragment())
+        }
     }
 
     private fun mainFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransition = fragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.fragmentMain.id, fragment)
-        fragmentTransition.commit()
+        val fragmentManager =
+            supportFragmentManager
+        fragmentManager.beginTransaction().apply {
+            replace(binding.fragmentMain.id, fragment)
+            commit()
+        }
     }
 }
