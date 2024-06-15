@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.afeed.R
+import com.capstone.afeed.adapter.ServiceNavigationAdapter
 import com.capstone.afeed.data.ResponseState
 import com.capstone.afeed.data.local.model.NavigationWithIcon
 import com.capstone.afeed.data.remote.response.GetListRegisteredFishpondWithSystemMeanScore
@@ -48,9 +49,9 @@ class DashboardFragment : Fragment() {
         ))
         serviceNavigationAdapter.submitList(
             listOf(
-                NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
-                NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
-                NavigationWithIcon(1,R.drawable.home_fill,"Title ini","ini descriptionnya cccccc"),
+                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
+                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
+                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
                 )
         )
     }

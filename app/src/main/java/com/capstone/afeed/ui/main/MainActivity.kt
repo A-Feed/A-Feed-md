@@ -1,5 +1,6 @@
 package com.capstone.afeed.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.enableEdgeToEdge
@@ -11,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.ActivityMainBinding
 import com.capstone.afeed.ui.main.dashboard.DashboardFragment
+import com.capstone.afeed.ui.notification.NotificationActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,10 +38,10 @@ class MainActivity : AppCompatActivity() {
     )
 
     private fun setupView() {
-        with(binding){
+        with(binding) {
             viewpagerMain.apply {
                 adapter = MainFragmentPagerAdapter(this@MainActivity)
-                registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+                registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {
                         bottomNavigation.selectedItemId = bottomNavigationMenuId[position]
                     }
@@ -49,6 +51,16 @@ class MainActivity : AppCompatActivity() {
                 val checkClickedMenu = bottomNavigationMenuId.indexOf(it.itemId)
                 viewpagerMain.currentItem = checkClickedMenu
                 return@setOnItemSelectedListener true
+            }
+            includedToolbarMain.tollbarMain.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.menu_notification -> {
+                        val intent = Intent(this@MainActivity, NotificationActivity::class.java)
+                        startActivity(intent)
+                        return@setOnMenuItemClickListener true
+                    }
+                    else -> false
+                }
             }
         }
     }

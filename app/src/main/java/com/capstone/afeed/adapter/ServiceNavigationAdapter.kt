@@ -1,7 +1,8 @@
-package com.capstone.afeed.ui.main.dashboard
+package com.capstone.afeed.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -10,18 +11,36 @@ import com.capstone.afeed.data.local.model.NavigationWithIcon
 import com.capstone.afeed.databinding.ListColumnNavigationCardBinding
 import com.capstone.afeed.utils.loadImage
 
-class ServiceNavigationAdapter : ListAdapter<NavigationWithIcon,ServiceNavigationAdapter.ViewHolder>(
-    DIFF_CALLBACK) {
+class ServiceNavigationAdapter : ListAdapter<NavigationWithIcon, ServiceNavigationAdapter.ViewHolder>(
+    DIFF_CALLBACK
+) {
+
+    interface AddNewListener{
+        fun onClickListener(item:NavigationWithIcon,binding: ListColumnNavigationCardBinding)
+    }
+
+    var addNewListener : AddNewListener? = null
     inner class ViewHolder(val binding: ListColumnNavigationCardBinding, val context: Context) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: NavigationWithIcon) {
             with(binding){
                 columnNavigationTextViewTitle.text = item.title
-                columnNavigationLeftIcon.loadImage(item.lefIcon)
+                if (item.lefIcon == null){
+                    cardViewLeftIconWrapper.visibility = View.GONE
+                    columnNavigationLeftIcon.visibility = View.GONE
+                }
+                if (item.rightIcon == null){
+                    columnNavigationRightIcon.visibility = View.GONE
+                }
+                item.lefIcon?.let { columnNavigationLeftIcon.loadImage(it) }
+                item.rightIcon?.let { columnNavigationRightIcon.loadImage(it) }
                 columnNavigationTextViewTitle.text = item.title
                 columnNavigationTextViewDescription.text = item.description
+                columnNavigationCard.setOnClickListener {
+                    addNewListener?.onClickListener(item,binding)
+                }
             }
-        }
 
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
