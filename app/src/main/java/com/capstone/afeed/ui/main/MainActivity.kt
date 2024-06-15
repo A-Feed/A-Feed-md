@@ -1,11 +1,13 @@
 package com.capstone.afeed.ui.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.viewpager2.widget.ViewPager2
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.ActivityMainBinding
 import com.capstone.afeed.ui.main.dashboard.DashboardFragment
@@ -24,23 +26,32 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        mainFragment(HomeFragmentBeforeLogIn())
+        setupView()
+    }
 
-        binding.bottomNavigation.setOnItemSelectedListener { menu ->
-            when (menu.itemId) {
-                R.id.menu_home -> mainFragment(HomeFragmentBeforeLogIn())
-                R.id.menu_dashboard -> mainFragment(DashboardFragment())
-                R.id.menu_settings -> mainFragment(SettingsFragment())
+    private val bottomNavigationMenuId = listOf(
+        R.id.menu_home,
+        R.id.menu_dashboard,
+        R.id.menu_settings,
+    )
+
+    private fun setupView() {
+        with(binding){
+            viewpagerMain.apply {
+                adapter = MainFragmentPagerAdapter(this@MainActivity)
+                registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback(){
+                    override fun onPageSelected(position: Int) {
+                        bottomNavigation.selectedItemId = bottomNavigationMenuId[position]
+                    }
+                })
             }
-            true
+            bottomNavigation.setOnItemSelectedListener {
+                val checkClickedMenu = bottomNavigationMenuId.indexOf(it.itemId)
+                viewpagerMain.currentItem = checkClickedMenu
+                return@setOnItemSelectedListener true
+            }
         }
-
     }
 
-    private fun mainFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
-        val fragmentTransition = fragmentManager.beginTransaction()
-        fragmentTransition.replace(binding.fragmentMain.id, fragment)
-        fragmentTransition.commit()
-    }
+
 }
