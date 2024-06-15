@@ -1,4 +1,4 @@
-package com.capstone.afeed.ui.main
+package com.capstone.afeed.ui.main.home
 
 import android.content.Intent
 import android.os.Bundle
