@@ -10,8 +10,7 @@
 
     <include
         android:id="@+id/included_toolbar_main"
-        layout="@layout/toolbar_main"
-        android:elevation="1000dp" />
+        layout="@layout/toolbar_main" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewpager_main"
@@ -39,6 +38,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="665dp" />
+        app:layout_constraintGuide_begin="55dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

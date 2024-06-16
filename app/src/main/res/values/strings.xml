@@ -39,7 +39,6 @@
     <string name="add">Add +</string>
     <string name="food_amount">Food Amount</string>
     <string name="splash_icon">Splash Icon</string>
-    <string name="splash_description">Build By Capstone Group</string>
     <string name="id_team">C241-PS367</string>
     <string name="welcome_to_afeed">Welcome To A-Feed!</string>
     <string name="discover">Discover Our Capabilities</string>
@@ -124,4 +123,19 @@
     </string>
     <string name="user_name">User Name</string>
     <string name="app_settings">App Settings</string>
+    <string name="illegal_state_exception">Do not access binding before onCreateView or after onDestroyView</string>
+    <string name="automatic_feeding_for_your_fish">Automatic Feeding For Your Fish</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="password_length_validation">Password must not be less than 8 characters</string>
+    <string name="fragment_login">fragment_login</string>
+    <string name="fragment_home_before_log_in">fragment_home_before_log_in</string>
+    <string name="build_by_capstone_group">Build By Capstone Group</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="sign_up_here">Sign up here</string>
+    <string name="dont_have_any_account">Don\'t have any account yet?</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
 </resources>
