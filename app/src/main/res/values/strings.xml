@@ -148,4 +148,6 @@
     <string name="temperature_monitoring_feature">Temperature Monitoring Feature</string>
     <string name="article">Article</string>
     <string name="article_s_image">Article\'s Image</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
 </resources>
