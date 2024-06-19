@@ -1,19 +1,15 @@
-package com.capstone.afeed.ui.main.home
+package com.capstone.afeed.ui.authentication
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.capstone.afeed.R
-import com.capstone.afeed.databinding.FragmentHomeBinding
-import com.capstone.afeed.ui.authentication.AuthenticationActivity
+import com.capstone.afeed.databinding.FragmentChangePasswordBinding
 
-class HomeFragment : Fragment() {
-
-    private var _binding: FragmentHomeBinding? = null
-
+class ChangePasswordFragment : Fragment() {
+    private var _binding: FragmentChangePasswordBinding? = null
     private val binding
         get() = _binding ?: throw IllegalStateException(getString(R.string.illegal_state_exception))
 
@@ -21,18 +17,13 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentChangePasswordBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.beforeLoginSection.btnElevatedSignNowButton.setOnClickListener {
-            val intent =
-                Intent(requireContext(), AuthenticationActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     override fun onDestroyView() {

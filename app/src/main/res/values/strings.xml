@@ -138,4 +138,16 @@
     <string name="username">Username</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="our_features">Our Features</string>
+    <string name="temperature_monitoring">Temperature \n Monitoring</string>
+    <string name="ph_monitoring">pH \n Monitoring</string>
+    <string name="customize_iot">Customize \n IOT</string>
+    <string name="a_feeding_feature">A-Feeding Feature</string>
+    <string name="customize_iot_feature">Customize IOT feature</string>
+    <string name="ph_monitoring_feature">ph monitoring feature</string>
+    <string name="temperature_monitoring_feature">Temperature Monitoring Feature</string>
+    <string name="article">Article</string>
+    <string name="article_s_image">Article\'s Image</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
 </resources>
