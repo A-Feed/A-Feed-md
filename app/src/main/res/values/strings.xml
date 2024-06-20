@@ -150,4 +150,7 @@
     <string name="article_s_image">Article\'s Image</string>
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_s_profile_picture">User\'s Profile Picture</string>
+    <string name="profile_edit">edit</string>
 </resources>
