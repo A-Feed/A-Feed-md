@@ -43,6 +43,16 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+<!--        this is for time picker dialog trigger -->
+        <FrameLayout
+            android:id="@+id/frameLayout_time_picker_trigger"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textInputlayout_time"
+            app:layout_constraintEnd_toEndOf="@+id/textInputlayout_time"
+            app:layout_constraintStart_toStartOf="@+id/textInputlayout_time"
+            app:layout_constraintTop_toTopOf="@+id/textInputlayout_time" />
+
 
         <TextView
             android:id="@+id/textView_Label_food_amount"
