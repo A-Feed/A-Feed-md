@@ -1,13 +1,13 @@
-package com.capstone.afeed.ui.articledetail
+package com.capstone.afeed.ui.main.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.capstone.afeed.repository.ArticlesRepository
 
-class ArticleDetailViewModel constructor(
+class HomeViewModel(
     private val articlesRepository: ArticlesRepository
 ) : ViewModel() {
-
-
-
+    fun getAllNews() = liveData {
+        emitSource(articlesRepository.getNews())
+    }
 }
