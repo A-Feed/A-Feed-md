@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.FragmentHomeBinding
 import com.capstone.afeed.ui.authentication.AuthenticationActivity
+import com.capstone.afeed.ui.bottomsheet.ModalBottomSheet
 
 class HomeFragment : Fragment() {
 
@@ -28,10 +29,28 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.beforeLoginSection.btnElevatedSignNowButton.setOnClickListener {
-            val intent =
-                Intent(requireContext(), AuthenticationActivity::class.java)
-            startActivity(intent)
+        setupView()
+    }
+
+    private fun setupView() {
+        with(binding) {
+            infoHomeSection.btnElevatedSignNowButton.setOnClickListener {
+                val intent =
+                    Intent(requireContext(), AuthenticationActivity::class.java)
+                startActivity(intent)
+            }
+            btnAFeeding.setOnClickListener {
+                ModalBottomSheet(1).show(parentFragmentManager, ModalBottomSheet.TAG)
+            }
+            btnCustomizeIot.setOnClickListener {
+                ModalBottomSheet(2).show(parentFragmentManager, ModalBottomSheet.TAG)
+            }
+            btnPhMonitoring.setOnClickListener {
+                ModalBottomSheet(3).show(parentFragmentManager, ModalBottomSheet.TAG)
+            }
+            btnTemperatureMonitoring.setOnClickListener {
+                ModalBottomSheet(4).show(parentFragmentManager, ModalBottomSheet.TAG)
+            }
         }
     }
 
