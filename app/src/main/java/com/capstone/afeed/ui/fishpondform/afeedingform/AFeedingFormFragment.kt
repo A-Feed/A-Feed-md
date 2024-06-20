@@ -86,7 +86,7 @@ class AFeedingFormFragment : Fragment() {
     }
 
     private fun initializeAdapter() {
-        aFeedingScheduleAdapter = AFeedingScheduleAdapter()
+        aFeedingScheduleAdapter = AFeedingScheduleAdapter(this)
         aFeedingSystemAdapter = AFeedingSystemAdapter()
     }
 

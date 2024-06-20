@@ -45,9 +45,6 @@ class MonitoringDetailActivity : AppCompatActivity() {
 
         setupGetExtrasDatas()
         setupObserver()
-//        setupOnbackPressed(
-//            onBackPressedDispatcher
-//        )
         setupView()
         setupAdapter(tabLayoutItemText)
 
