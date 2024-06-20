@@ -14,28 +14,16 @@
         >
 
         <TextView
-            android:id="@+id/textView_sequence_number"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            android:fontFamily="@font/inter_bold"
-            android:text="@string/no"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/textView_Label_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/inter_bold"
             android:text="@string/time"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/textView_sequence_number"
-            app:layout_constraintStart_toStartOf="@+id/textView_sequence_number"
-            app:layout_constraintTop_toBottomOf="@+id/textView_sequence_number" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputlayout_time"

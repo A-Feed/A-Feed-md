@@ -138,6 +138,10 @@
     <string name="username">Username</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="select_feeding_time">Select Feeding Time</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="light_theme">Light Theme</string>
+    <string name="cancel">Cancel</string>
     <string name="our_features">Our Features</string>
     <string name="temperature_monitoring">Temperature \n Monitoring</string>
     <string name="ph_monitoring">pH \n Monitoring</string>

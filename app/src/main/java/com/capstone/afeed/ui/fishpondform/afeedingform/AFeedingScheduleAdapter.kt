@@ -7,17 +7,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.capstone.afeed.R
 import com.capstone.afeed.data.remote.request.FishpondIotRequest
 import com.capstone.afeed.databinding.ItemColumnCardInputScheduleBinding
+import com.capstone.afeed.ui.dialog.TimePickerDialogFragment
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 class AFeedingScheduleAdapter :
     ListAdapter<FishpondIotRequest.AFeedingSchedule, AFeedingScheduleAdapter.ViewHolder>(
         DIFF_CALLBACK
     ) {
+
     interface AddNewListener {
         fun inputDataListener(dataInput: FishpondIotRequest.AFeedingSchedule, id: Int)
         fun deleteItemListener(id: Int)
@@ -28,10 +34,18 @@ class AFeedingScheduleAdapter :
 
     inner class ViewHolder(val binding: ItemColumnCardInputScheduleBinding, val context: Context) :
         RecyclerView.ViewHolder(binding.root) {
+
+        private val timePicker: MaterialTimePicker =
+            MaterialTimePicker.Builder()
+                .setTimeFormat(TimeFormat.CLOCK_24H)
+                .setHour(12)
+                .setMinute(10)
+                .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
+                .setTitleText(context.getString(R.string.select_feeding_time))
+                .build()
+
         fun bind(item: FishpondIotRequest.AFeedingSchedule, itemCount: Int, position: Int) {
             with(binding) {
-                textViewSequenceNumber.text =
-                    context.getString(R.string.no, (position + 1).toString())
                 checkBoxItemSchedule.setOnCheckedChangeListener { _, isChecked ->
                     if (isChecked) {
                         inputDataListener(
@@ -41,24 +55,14 @@ class AFeedingScheduleAdapter :
                         )
                     }
                 }
-                inputTextTime.addTextChangedListener {
-                    object : TextWatcher {
-                        override fun beforeTextChanged(
-                            p0: CharSequence?,
-                            p1: Int,
-                            p2: Int,
-                            p3: Int
-                        ) {
 
+                inputTextTime.apply {
+                    setOnClickListener {
+                        timePicker.show((context as Fragment).parentFragmentManager, "TIME PICKER ${id}")
+                        timePicker.addOnPositiveButtonClickListener {
+                            inputTextTime.setText(TimePickerDialogFragment.Timenya(timePicker.hour,timePicker.minute).toString())
+                            Log.i("datas", TimePickerDialogFragment.Timenya(timePicker.hour,timePicker.minute).toString())
                         }
-
-                        override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                        }
-
-                        override fun afterTextChanged(p0: Editable?) {
-                            checkBoxItemSchedule.isChecked = false
-                        }
-
                     }
                 }
 

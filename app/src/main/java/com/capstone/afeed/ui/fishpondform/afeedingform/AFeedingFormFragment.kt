@@ -1,6 +1,7 @@
 package com.capstone.afeed.ui.fishpondform.afeedingform
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,13 +12,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.afeed.R
 import com.capstone.afeed.data.remote.request.FishpondIotRequest
 import com.capstone.afeed.databinding.FragmentAFeedingFormBinding
+import com.capstone.afeed.ui.dialog.TimePickerDialogFragment
 import com.capstone.afeed.ui.fishpondform.FishPondFormViewModel
 import com.capstone.afeed.ui.fishpondform.FishPondFormViewModelFactory
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.timepicker.MaterialTimePicker
+import com.google.android.material.timepicker.TimeFormat
 
 class AFeedingFormFragment : Fragment() {
-
-
-    private var _binding : FragmentAFeedingFormBinding? = null
+    private var _binding: FragmentAFeedingFormBinding? = null
     private val binding get() = _binding!!
     private val fishPondFormViewModel: FishPondFormViewModel by activityViewModels {
         FishPondFormViewModelFactory.getInstance(
@@ -26,12 +29,21 @@ class AFeedingFormFragment : Fragment() {
     }
     private lateinit var aFeedingScheduleAdapter: AFeedingScheduleAdapter
     private lateinit var aFeedingSystemAdapter: AFeedingSystemAdapter
+    private val timePicker: MaterialTimePicker by lazy {
+        MaterialTimePicker.Builder()
+            .setTimeFormat(TimeFormat.CLOCK_24H)
+            .setHour(12)
+            .setMinute(10)
+            .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
+            .setTitleText(getString(R.string.select_feeding_time))
+            .build()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentAFeedingFormBinding.inflate(inflater,container,false)
+    ): View? {
+        _binding = FragmentAFeedingFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -56,12 +68,14 @@ class AFeedingFormFragment : Fragment() {
             override fun deleteItemListener(id: Int) {
                 fishPondFormViewModel.deleteInputDataAFeedingSchedule(id)
             }
+
         }
         aFeedingSystemAdapter.addNewListener = object : AFeedingSystemAdapter.AddNewListener {
             override fun insertItemListener(
                 dataInput: FishpondIotRequest.AFeedingSystem,
                 id: Int
             ) {
+                Log.i("datas", id.toString())
                 fishPondFormViewModel.editInputDataAFeedingSystem(id, dataInput)
             }
 
@@ -99,6 +113,7 @@ class AFeedingFormFragment : Fragment() {
     private fun setupObserver() {
         with(fishPondFormViewModel) {
             fishpondAFeedingSchedule.observe(requireActivity()) {
+//                Log.i("datas",it.toList().toString())
                 aFeedingScheduleAdapter.submitList(it.toList())
             }
             fishpondAFeedingSystem.observe(requireActivity()) {
