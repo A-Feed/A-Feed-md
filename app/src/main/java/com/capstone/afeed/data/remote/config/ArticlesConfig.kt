@@ -2,7 +2,6 @@ package com.capstone.afeed.data.remote.config
 
 import com.capstone.afeed.BuildConfig
 import com.capstone.afeed.data.remote.service.ArticlesService
-import com.capstone.afeed.data.remote.service.FishPondService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,10 +20,12 @@ class ArticlesConfig {
                 HttpLoggingInterceptor.Level.NONE
             )
 
+            val apiKey = BuildConfig.API_KEY_NEWS
+
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeaders = req.newBuilder()
-                    .addHeader("X-Api-Key", "")
+                    .addHeader("X-Api-Key", apiKey)
                     .build()
                 chain.proceed(requestHeaders)
             }
@@ -36,7 +37,7 @@ class ArticlesConfig {
 
 
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://newsapi.org/")
+                .baseUrl("https://newsapi.org/v2/")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

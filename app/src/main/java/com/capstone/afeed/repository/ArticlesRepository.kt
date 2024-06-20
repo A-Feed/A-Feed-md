@@ -2,18 +2,16 @@ package com.capstone.afeed.repository
 
 import androidx.lifecycle.liveData
 import com.capstone.afeed.data.ResponseState
-import com.capstone.afeed.data.remote.config.ArticlesConfig
 import com.capstone.afeed.data.remote.response.ErrorArticlesResponse
 import com.capstone.afeed.data.remote.response.ErrorResponse
 import com.capstone.afeed.data.remote.service.ArticlesService
-import com.capstone.afeed.data.remote.service.FishPondService
 import com.google.gson.Gson
 import retrofit2.HttpException
 
-class ArticlesRepository constructor(
+class ArticlesRepository(
     private val articlesService: ArticlesService
 ) {
-    suspend fun getNews()  = liveData {
+    suspend fun getNews() = liveData {
         emit(ResponseState.Loading)
         try {
             val result = articlesService.getArticles()
@@ -25,7 +23,7 @@ class ArticlesRepository constructor(
                     ErrorResponse::class.java
                 )
                 emit(ResponseState.Error(errorMessage.message))
-            }catch (e : Exception){
+            } catch (e: Exception) {
                 emit(ResponseState.Error("Unknown Error"))
             }
         } catch (e: Exception) {
