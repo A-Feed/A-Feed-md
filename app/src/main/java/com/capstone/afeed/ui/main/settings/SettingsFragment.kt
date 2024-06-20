@@ -12,6 +12,7 @@ import com.capstone.afeed.data.local.model.NavigationWithIcon
 import com.capstone.afeed.databinding.FragmentDashboardBinding
 import com.capstone.afeed.databinding.FragmentSettingsBinding
 import com.capstone.afeed.databinding.ListColumnNavigationCardBinding
+import com.capstone.afeed.ui.dialog.ThemeChooserDialogFragment
 
 class SettingsFragment : Fragment() {
 
@@ -103,7 +104,9 @@ class SettingsFragment : Fragment() {
                 item: NavigationWithIcon,
                 binding: ListColumnNavigationCardBinding
             ) {
-
+                if (item.id == 1){
+                    ThemeChooserDialogFragment().show(requireActivity().supportFragmentManager,ThemeChooserDialogFragment.TAG)
+                }
             }
         }
     }
