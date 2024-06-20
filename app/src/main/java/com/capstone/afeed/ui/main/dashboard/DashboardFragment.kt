@@ -1,5 +1,6 @@
 package com.capstone.afeed.ui.main.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,9 @@ import com.capstone.afeed.data.ResponseState
 import com.capstone.afeed.data.local.model.NavigationWithIcon
 import com.capstone.afeed.data.remote.response.GetListRegisteredFishpondWithSystemMeanScore
 import com.capstone.afeed.databinding.FragmentDashboardBinding
+import com.capstone.afeed.databinding.ListColumnNavigationCardBinding
+import com.capstone.afeed.ui.fishpondform.FishPondFormActivity
+import com.capstone.afeed.ui.monitoring.MonitoringActivity
 
 class DashboardFragment : Fragment() {
 
@@ -47,13 +51,7 @@ class DashboardFragment : Fragment() {
             GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData("","","","","",""),
             GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData("","","","","",""),
         ))
-        serviceNavigationAdapter.submitList(
-            listOf(
-                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
-                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
-                NavigationWithIcon(1,R.drawable.home_fill,null,"Title ini","ini descriptionnya cccccc"),
-                )
-        )
+
     }
 
     private fun setupObserver() {
@@ -87,6 +85,37 @@ class DashboardFragment : Fragment() {
     private fun setupAdapter() {
         fispondSystemMeanValueAdapter = FispondSystemMeanValueAdapter()
         serviceNavigationAdapter = ServiceNavigationAdapter()
+        serviceNavigationAdapter.submitList(
+            listOf(
+                NavigationWithIcon(1,R.drawable.home_fill,null,"Monitoring","monitoring your registered IOT system"),
+                NavigationWithIcon(2,R.drawable.home_fill,null,"Setting IOT system","adjust setting for you IOT system"),
+                NavigationWithIcon(3,R.drawable.home_fill,null,"Registering New FishPond","setup and register your new bought IOT to app"),
+            )
+        )
+        serviceNavigationAdapter.addNewListener = object : ServiceNavigationAdapter.AddNewListener{
+            override fun onClickListener(
+                item: NavigationWithIcon,
+                binding: ListColumnNavigationCardBinding
+            ) {
+                val intentClass = when (item.id){
+                    1 -> {
+                         Intent(requireContext(),MonitoringActivity::class.java)
+                    }
+                    2 -> {
+                        Intent(requireContext(),FishPondFormActivity::class.java)
+                    }
+                    3-> {
+                        Intent(requireContext(),FishPondFormActivity::class.java)
+                    }
+
+                    else -> {
+                        Intent(requireContext(),MonitoringActivity::class.java)
+                    }
+                }
+                startActivity(intentClass)
+            }
+
+        }
 
     }
 
