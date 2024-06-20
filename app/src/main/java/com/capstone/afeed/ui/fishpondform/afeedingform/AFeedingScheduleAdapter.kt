@@ -19,7 +19,9 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 
-class AFeedingScheduleAdapter :
+class AFeedingScheduleAdapter(
+    val fragment: Fragment
+) :
     ListAdapter<FishpondIotRequest.AFeedingSchedule, AFeedingScheduleAdapter.ViewHolder>(
         DIFF_CALLBACK
     ) {
@@ -56,12 +58,11 @@ class AFeedingScheduleAdapter :
                     }
                 }
 
-                inputTextTime.apply {
+                frameLayoutTimePickerTrigger.apply {
                     setOnClickListener {
-                        timePicker.show((context as Fragment).parentFragmentManager, "TIME PICKER ${id}")
+                        timePicker.show(fragment.parentFragmentManager, "TIME PICKER ${id}")
                         timePicker.addOnPositiveButtonClickListener {
-                            inputTextTime.setText(TimePickerDialogFragment.Timenya(timePicker.hour,timePicker.minute).toString())
-                            Log.i("datas", TimePickerDialogFragment.Timenya(timePicker.hour,timePicker.minute).toString())
+                            inputTextTime.setText("${timePicker.hour}:${timePicker.minute}")
                         }
                     }
                 }
