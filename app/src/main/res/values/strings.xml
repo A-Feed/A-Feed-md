@@ -172,4 +172,10 @@
     <string name="profile_edit">edit</string>
     <string name="bottom_sheet_s_image">Bottom Sheet\'s Image</string>
     <string name="article_full_image">Article Full Image</string>
+    <string name="registered_iot_system">Registered IOT System</string>
+    <string name="registered_iot_system_description">this is your registered iot system and Ph System, Temperature System, A-Feeder with only ON status</string>
+    <string name="temperature_system_login">Temperature \n System</string>
+    <string name="action_successful">Action Successful</string>
+    <string name="success">Success</string>
+    <string name="john">John</string>
 </resources>
