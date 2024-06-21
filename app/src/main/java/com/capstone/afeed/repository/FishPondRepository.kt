@@ -12,7 +12,6 @@ import retrofit2.HttpException
 
 class FishPondRepository
 private constructor(private val fishPondService: FishPondService) {
-
     suspend fun getTotalRegisteredFishpond(
         userId: Int
     ) = liveData {
