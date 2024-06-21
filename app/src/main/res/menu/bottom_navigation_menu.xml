@@ -2,15 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menu_home"
+        android:enabled="true"
         android:icon="@drawable/home_fill"
         android:title="@string/home_main"
         />
     <item
         android:id="@+id/menu_dashboard"
+        android:enabled="true"
         android:icon="@drawable/dashboard_fill"
         android:title="@string/dashboard_main" />
     <item
         android:id="@+id/menu_settings"
+        android:enabled="true"
         android:icon="@drawable/settings_fill"
         android:title="@string/settings_main" />
 </menu>

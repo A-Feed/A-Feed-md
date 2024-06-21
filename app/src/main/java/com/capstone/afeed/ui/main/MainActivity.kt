@@ -2,16 +2,13 @@ package com.capstone.afeed.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.ActivityMainBinding
-import com.capstone.afeed.ui.main.dashboard.DashboardFragment
 import com.capstone.afeed.ui.notification.NotificationActivity
 
 class MainActivity : AppCompatActivity() {
@@ -59,6 +56,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         return@setOnMenuItemClickListener true
                     }
+
                     else -> false
                 }
             }
