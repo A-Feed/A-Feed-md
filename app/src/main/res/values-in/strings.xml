@@ -83,4 +83,7 @@
     <string name="edit">Ubah</string>
     <string name="profile_picture">Foto Profile</string>
     <string name="profile_edit">Ubah</string>
+    <string name="registered_iot_system">Sistem IOT yang terdaftar</string>
+    <string name="temperature_system_login">Sistem Suhu</string>
+    <string name="registered_iot_system_description">Ini adalah sistem IOT Anda yang terdaftar dan \\nSistem Ph, Sistem Suhu, A-Feeder dengan status ON saja</string>
 </resources>

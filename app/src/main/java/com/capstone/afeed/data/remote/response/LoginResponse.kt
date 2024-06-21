@@ -12,13 +12,27 @@ data class LoginResponse(
 
     @field:SerializedName("status")
     val status: String? = null
-)
+) {
+    data class User(
 
-data class Data(
+        @field:SerializedName("name")
+        val name: String? = null,
 
-    @field:SerializedName("user")
-    val user: User? = null,
+        @field:SerializedName("id")
+        val id: Int? = null,
 
-    @field:SerializedName("token")
-    val token: String? = null
-)
+        @field:SerializedName("email")
+        val email: String? = null
+    )
+
+    data class Data(
+
+        @field:SerializedName("user")
+        val user: User? = null,
+
+        @field:SerializedName("token")
+        val token: String? = null
+    )
+}
+
+

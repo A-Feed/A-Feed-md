@@ -12,17 +12,24 @@ data class RegisterResponse(
 
     @field:SerializedName("status")
     val status: String? = null
-)
+) {
+    data class User(
 
-data class User(
+        @field:SerializedName("name")
+        val name: String? = null,
 
-    @field:SerializedName("name")
-    val name: String? = null,
+        @field:SerializedName("id")
+        val id: Int? = null,
 
-    @field:SerializedName("id")
-    val id: Int? = null,
+        @field:SerializedName("email")
+        val email: String? = null
+    )
 
-    @field:SerializedName("email")
-    val email: String? = null
-)
+    data class Data(
+
+        @field:SerializedName("user")
+        val user: User? = null
+    )
+}
+
 

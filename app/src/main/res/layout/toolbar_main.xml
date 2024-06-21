@@ -32,7 +32,7 @@
             app:menu="@menu/menu_toolbar_main"
             app:title="@string/welcome_back"
             app:titleTextAppearance="@style/TextAppearance.AppCompat.Small"
-            app:subtitle="@string/john">
+            tools:subtitle="John">
 
         </com.google.android.material.appbar.MaterialToolbar>
 
