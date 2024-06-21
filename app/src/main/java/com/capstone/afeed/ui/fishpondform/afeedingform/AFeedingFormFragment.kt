@@ -29,15 +29,6 @@ class AFeedingFormFragment : Fragment() {
     }
     private lateinit var aFeedingScheduleAdapter: AFeedingScheduleAdapter
     private lateinit var aFeedingSystemAdapter: AFeedingSystemAdapter
-    private val timePicker: MaterialTimePicker by lazy {
-        MaterialTimePicker.Builder()
-            .setTimeFormat(TimeFormat.CLOCK_24H)
-            .setHour(12)
-            .setMinute(10)
-            .setInputMode(MaterialTimePicker.INPUT_MODE_KEYBOARD)
-            .setTitleText(getString(R.string.select_feeding_time))
-            .build()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,13 +60,13 @@ class AFeedingFormFragment : Fragment() {
                 fishPondFormViewModel.deleteInputDataAFeedingSchedule(id)
             }
 
+
         }
         aFeedingSystemAdapter.addNewListener = object : AFeedingSystemAdapter.AddNewListener {
             override fun insertItemListener(
                 dataInput: FishpondIotRequest.AFeedingSystem,
                 id: Int
             ) {
-                Log.i("datas", id.toString())
                 fishPondFormViewModel.editInputDataAFeedingSystem(id, dataInput)
             }
 
@@ -118,9 +109,6 @@ class AFeedingFormFragment : Fragment() {
             }
             fishpondAFeedingSystem.observe(requireActivity()) {
                 aFeedingSystemAdapter.submitList(it.toList())
-            }
-            fishpondData.observe(requireActivity()) {
-                aFeedingSystemAdapter.submitList(it.afeeding?.aFeedingSystem?.toList())
             }
         }
 

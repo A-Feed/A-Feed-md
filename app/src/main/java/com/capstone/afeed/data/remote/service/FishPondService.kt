@@ -8,8 +8,10 @@ import com.capstone.afeed.data.remote.response.GetListPhSystemFromFishPondIDResp
 import com.capstone.afeed.data.remote.response.GetListRegisteredFishpondWithSystemMeanScore
 import com.capstone.afeed.data.remote.response.GetListTemperatureSystemFromFishPondIDResponse
 import com.capstone.afeed.data.remote.response.GetTotalRegisteredFishPondResponse
+import com.capstone.afeed.data.remote.response.StatusWithMessageResponse
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.PUT
@@ -53,18 +55,18 @@ interface FishPondService {
     @POST("/register-fishpond/create")
     suspend fun postRegisterFishPondCreate(
         @Body fishpondIotRequest: FishpondIotRequest
-    )
+    ) : StatusWithMessageResponse
 
     @PUT("/register-fishpond/update/{fishpondId}")
-    suspend fun postRegisterFishPondUpdate(
+    suspend fun putRegisteredFishPond(
         @Path("fishpondId") fishPondId: Int,
         @Body fishpondIotRequest: FishpondIotRequest
-    )
+    ) : StatusWithMessageResponse
 
     @DELETE("/register-iot/delete/{fishpondId}")
     suspend fun postRegisterFishPondDelete(
         @Path("fishpondId") fishPondId: Int,
-        )
+        ) : StatusWithMessageResponse
 
 
 }

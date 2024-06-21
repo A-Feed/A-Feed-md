@@ -1,6 +1,8 @@
 package com.capstone.afeed.ui.main.settings
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,14 +37,16 @@ class SettingsFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        with(binding){
+        with(binding) {
             recylerViewAppSettingsSettings.apply {
                 adapter = appSettingsAdapter
-                layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             }
             recylerViewAccountSettingsSettings.apply {
                 adapter = accountSettingsAdapter
-                layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             }
         }
     }
@@ -90,7 +94,7 @@ class SettingsFragment : Fragment() {
 
         accountSettingsAdapter = ServiceNavigationAdapter()
         accountSettingsAdapter.submitList(accountSettingsMenu)
-        accountSettingsAdapter.addNewListener = object :ServiceNavigationAdapter.AddNewListener{
+        accountSettingsAdapter.addNewListener = object : ServiceNavigationAdapter.AddNewListener {
             override fun onClickListener(
                 item: NavigationWithIcon,
                 binding: ListColumnNavigationCardBinding
@@ -99,14 +103,23 @@ class SettingsFragment : Fragment() {
         }
         appSettingsAdapter = ServiceNavigationAdapter()
         appSettingsAdapter.submitList(appSettingsMenu)
-        appSettingsAdapter.addNewListener = object :ServiceNavigationAdapter.AddNewListener{
+        appSettingsAdapter.addNewListener = object : ServiceNavigationAdapter.AddNewListener {
             override fun onClickListener(
                 item: NavigationWithIcon,
                 binding: ListColumnNavigationCardBinding
             ) {
-                if (item.id == 1){
-                    ThemeChooserDialogFragment().show(requireActivity().supportFragmentManager,ThemeChooserDialogFragment.TAG)
+                when (item.id) {
+                    1 -> {
+                        ThemeChooserDialogFragment().show(
+                            requireActivity().supportFragmentManager,
+                            ThemeChooserDialogFragment.TAG
+                        )
+                    }
+                    2 -> {
+                        startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+                    }
                 }
+
             }
         }
     }

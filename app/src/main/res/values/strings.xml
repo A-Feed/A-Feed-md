@@ -3,15 +3,15 @@
     <string name="welcome_back">Welcome Back!</string>
     <string name="notification">Notification</string>
     <string name="unit">Unit</string>
-    <string name="_0">0</string>
+    <string name="_0" translatable="false">0</string>
     <string name="monitoring_activty_title">Monitoring Fishpond</string>
     <string name="monitoring_activity_desc">click one of the card below to see the detail data about specific fishpond , and connected system </string>
     <string name="list_of_registered_fishpond_title">List of registered FishPond</string>
-    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="lorem" translatable="false">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
     <string name="score">Score</string>
-    <string name="fishpond_score_amp_status"><![CDATA[Fishpond Score & Status]]></string>
+    <string name="fishpond_score_amp_status" translatable="false"><![CDATA[Fishpond Score & Status]]></string>
     <string name="fishpond_status">FishPond Status</string>
-    <string name="colon">:</string>
+    <string name="colon" translatable="false">:</string>
     <string name="cause">Cause</string>
     <string name="temperature_total">Temperature Total</string>
     <string name="temperature_score">Temperature Score</string>
@@ -20,53 +20,53 @@
     <string name="description">Description</string>
     <string name="feeding_progress">Feeding Progress</string>
     <string name="connected_device">Connected Device</string>
-    <string name="automatic_feed">A-Feeding</string>
-    <string name="ph_system">Ph System</string>
+    <string name="automatic_feed" translatable="false">A-Feeding</string>
+    <string name="ph_system" translatable="false">Ph System</string>
     <string name="temperature_system">Temperature System</string>
     <string name="fishpond_profile">Fishpond profile</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="id_system">ID System</string>
-    <string name="status">Status</string>
-    <string name="no">No.%s</string>
+    <string name="status" translatable="false">Status</string>
+    <string name="no" translatable="false">No.%s</string>
     <string name="time">Time</string>
-    <string name="kg">%s Kg</string>
+    <string name="kg" translatable="false">%s Kg</string>
     <string name="feeding_schedule">Feeding Schedule</string>
     <string name="list_of_registered_a_feeding">List of registered A-Feeding</string>
     <string name="list_of_registered_ph_system">List of registered Ph System</string>
     <string name="fishpond_name">FishPond Name</string>
     <string name="next">Next</string>
-    <string name="a_feeding">A-Feeding</string>
+    <string name="a_feeding" translatable="false">A-Feeding</string>
     <string name="add">Add +</string>
     <string name="food_amount">Food Amount</string>
-    <string name="splash_icon">Splash Icon</string>
-    <string name="id_team">C241-PS367</string>
+    <string name="splash_icon" translatable="false">Splash Icon</string>
+    <string name="id_team" translatable="false">C241-PS367</string>
     <string name="welcome_to_afeed">Welcome To A-Feed!</string>
     <string name="discover">Discover Our Capabilities</string>
-    <string name="skip">Skip</string>
+    <string name="skip" translatable="false">Skip</string>
     <string name="a_feeding_system">A-Feeding System</string>
-    <string name="_1">1</string>
-    <string name="_2">2</string>
-    <string name="_3">3</string>
-    <string name="_4">4</string>
+    <string name="_1" translatable="false">1</string>
+    <string name="_2" translatable="false">2</string>
+    <string name="_3" translatable="false">3</string>
+    <string name="_4" translatable="false">4</string>
     <string name="save_this_edit">Save This Edit</string>
     <string name="delete">Delete</string>
     <string name="save">Save</string>
     <string name="access_denied">Access Denied</string>
     <string name="you_need_to_sign_in_first_or_sign_up_and_make_new_account">You need to sign in first or sign up and make new account</string>
-    <string name="sign_in">Sign In</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_in" translatable="false">Sign In</string>
+    <string name="sign_up" translatable="false">Sign Up</string>
     <string name="close">Close</string>
     <string name="list_of_registered_temperature_system">List of Temperature System</string>
     <string name="cd_introduction">introduction</string>
-    <string name="home_main">Home</string>
-    <string name="dashboard_main">Dashboard</string>
-    <string name="settings_main">Settings</string>
-    <string name="logo_app">Logo Application</string>
+    <string name="home_main" translatable="false">Home</string>
+    <string name="dashboard_main" translatable="false">Dashboard</string>
+    <string name="settings_main" translatable="false">Settings</string>
+    <string name="logo_app" translatable="false">Logo Application</string>
     <string name="sign_in_main">Sign in to take advantage of our service</string>
     <string name="sign_now">Sign Now</string>
-    <string name="button_icon">Icon Next</string>
+    <string name="button_icon" translatable="false">Icon Next</string>
     <string name="fishpond">Fishpond</string>
-    <string name="tablayout_registered_system">Tablayout Registered System</string>
+    <string name="tablayout_registered_system" translatable="false">Tablayout Registered System</string>
     <string name="fish_type">Fish Type</string>
     <string name="attention">Attention</string>
     <string name="list_empty">%s Is Empty</string>
@@ -81,11 +81,11 @@
         <item>Gurame</item>
     </string-array>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="previous">Previous</string>
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="previous" translatable="false">Previous</string>
 
-    <string name="lorem_ipsum">
+    <string name="lorem_ipsum" translatable="false">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
         dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
@@ -121,40 +121,31 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="a_feeding_bottom_sheet">
-        A-Feeding is automation machine to make fish cultivator easly mantaining his fish using some
-        sort of data from the pond we can determine when to give the fish his food
-    </string>
-    <string name="customize_iot_bottom_sheet">
-        Customize the IoT settings for a better experience
-    </string>
-    <string name="ph_monitoring_bottom_sheet">
-        Easily monitor pH levels with this tool
-    </string>
-    <string name="temperature_monitoring_bottom_sheet">
-        Monitor the temperature in real-time to ensure optimal conditions
-    </string>
+    <string name="a_feeding_bottom_sheet">"         A-Feeding is automation machine to make fish cultivator easly mantaining his fish using some         sort of data from the pond we can determine when to give the fish his food     "</string>
+    <string name="customize_iot_bottom_sheet">"         Customize the IoT settings for a better experience     "</string>
+    <string name="ph_monitoring_bottom_sheet">"         Easily monitor pH levels with this tool     "</string>
+    <string name="temperature_monitoring_bottom_sheet">"         Monitor the temperature in real-time to ensure optimal conditions     "</string>
     <string name="user_name">User Name</string>
     <string name="app_settings">App Settings</string>
-    <string name="illegal_state_exception">Do not access binding before onCreateView or after onDestroyView</string>
+    <string name="illegal_state_exception" translatable="false">Do not access binding before onCreateView or after onDestroyView</string>
     <string name="automatic_feeding_for_your_fish">Automatic Feeding For Your Fish</string>
     <string name="invalid_email">Invalid Email</string>
     <string name="email">Email Address</string>
-    <string name="password">Password</string>
+    <string name="password" translatable="false">Password</string>
     <string name="password_length_validation">Password must not be less than 8 characters</string>
-    <string name="fragment_login">fragment_login</string>
-    <string name="fragment_home_before_log_in">fragment_home_before_log_in</string>
-    <string name="build_by_capstone_group">Build By Capstone Group</string>
+    <string name="fragment_login" translatable="false">fragment_login</string>
+    <string name="fragment_home_before_log_in" translatable="false">fragment_home_before_log_in</string>
+    <string name="build_by_capstone_group" translatable="false">Build By Capstone Group</string>
     <string name="forget_password">Forget password?</string>
     <string name="sign_up_here">Sign up here</string>
     <string name="dont_have_any_account">Don\'t have any account yet?</string>
-    <string name="username">Username</string>
+    <string name="username" translatable="false">Username</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="select_feeding_time">Select Feeding Time</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="light_theme">Light Theme</string>
-    <string name="cancel">Cancel</string>
+    <string name="cancel" translatable="false">Cancel</string>
     <string name="our_features">Our Features</string>
     <string name="temperature_monitoring">Temperature \n Monitoring</string>
     <string name="ph_monitoring">pH \n Monitoring</string>
@@ -167,15 +158,12 @@
     <string name="article_s_image">Article\'s Image</string>
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
-    <string name="profile_picture">Profile Picture</string>
-    <string name="user_s_profile_picture">User\'s Profile Picture</string>
-    <string name="profile_edit">edit</string>
-    <string name="bottom_sheet_s_image">Bottom Sheet\'s Image</string>
-    <string name="article_full_image">Article Full Image</string>
-    <string name="registered_iot_system">Registered IOT System</string>
-    <string name="registered_iot_system_description">this is your registered iot system and Ph System, Temperature System, A-Feeder with only ON status</string>
-    <string name="temperature_system_login">Temperature \n System</string>
-    <string name="action_successful">Action Successful</string>
+    <string name="choose_fishpond_you_want_edit">Choose fishpond you want edit or delete</string>
     <string name="success">Success</string>
-    <string name="john">John</string>
+    <string name="error" translatable="false">Error</string>
+    <string name="edit">Edit</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_s_profile_picture" translatable="false">User\'s Profile Picture</string>
+    <string name="profile_edit">edit</string>
+    <string name="bottom_sheet_s_image" translatable="false">Bottom Sheet\'s Image</string>
 </resources>
