@@ -1,4 +1,4 @@
-package com.capstone.afeed.ui.articledetail
+package com.capstone.afeed.ui.profile
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,27 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.capstone.afeed.R
-import com.capstone.afeed.databinding.ActivityArticleDetailBinding
 
-class ArticleDetailActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityArticleDetailBinding
-
-    //    private val articleDetailViewModel : ArticleDetailViewModel by viewModels {
-//        ArticleDetailViewModelFactory.getInstance(this)
-//    }
+class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityArticleDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_profile)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
     }
-
-
 }

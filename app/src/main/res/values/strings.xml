@@ -121,6 +121,19 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="a_feeding_bottom_sheet">
+        A-Feeding is automation machine to make fish cultivator easly mantaining his fish using some
+        sort of data from the pond we can determine when to give the fish his food
+    </string>
+    <string name="customize_iot_bottom_sheet">
+        Customize the IoT settings for a better experience
+    </string>
+    <string name="ph_monitoring_bottom_sheet">
+        Easily monitor pH levels with this tool
+    </string>
+    <string name="temperature_monitoring_bottom_sheet">
+        Monitor the temperature in real-time to ensure optimal conditions
+    </string>
     <string name="user_name">User Name</string>
     <string name="app_settings">App Settings</string>
     <string name="illegal_state_exception">Do not access binding before onCreateView or after onDestroyView</string>
@@ -158,4 +171,8 @@
     <string name="success">Success</string>
     <string name="error">Error</string>
     <string name="edit">Edit</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_s_profile_picture">User\'s Profile Picture</string>
+    <string name="profile_edit">edit</string>
+    <string name="bottom_sheet_s_image">Bottom Sheet\'s Image</string>
 </resources>
