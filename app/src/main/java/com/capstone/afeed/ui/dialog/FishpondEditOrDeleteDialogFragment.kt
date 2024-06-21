@@ -1,16 +1,27 @@
 package com.capstone.afeed.ui.dialog
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
+import com.capstone.afeed.R
 import com.capstone.afeed.databinding.DialogSuccessFragmentBinding
+import com.capstone.afeed.databinding.FragmentFishpondEditOrDeleteDialogBinding
 
-class SuccessDialogFragment : DialogFragment() {
-    private var _binding : DialogSuccessFragmentBinding? = null
+class FishpondEditOrDeleteDialogFragment : DialogFragment() {
+
+    private var _binding : FragmentFishpondEditOrDeleteDialogBinding? = null
     private val binding get() = _binding!!
+
+    interface AddNewListener {
+        fun onClickEdit()
+        fun onClickDelete()
+    }
+
+    var addNewListener : AddNewListener? = null
 
     override fun onResume() {
         super.onResume()
@@ -19,26 +30,24 @@ class SuccessDialogFragment : DialogFragment() {
         this.dialog?.window?.setLayout((getDisplayDimension.widthPixels * 9) /10, WindowManager.LayoutParams.WRAP_CONTENT)
     }
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = DialogSuccessFragmentBinding.inflate(inflater,container,false)
+    ): View? {
+        // Inflate the layout for this fragment
+         _binding = FragmentFishpondEditOrDeleteDialogBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupView()
-    }
-
-    private fun setupView() {
         with(binding){
-            btnCloseSuccessDialog.setOnClickListener {
-                dialog?.dismiss()
+            buttonDelete.setOnClickListener {
+                addNewListener?.onClickDelete()
             }
-            textViewSuccessMessageDescription.text = arguments?.getString(MESSAGE_DESCRIPTION)
-            textViewSuccessMessageTitle.text = arguments?.getString(MESSAGE_TITLE)
+            buttonEdit.setOnClickListener {
+                addNewListener?.onClickEdit()
+            }
+            textViewTitleCard.text = arguments?.getString(TITLE_CARD_EXTRAS)
         }
     }
 
@@ -48,8 +57,7 @@ class SuccessDialogFragment : DialogFragment() {
     }
 
     companion object{
-        const val TAG = "SuccessDialogFragment"
-        const val MESSAGE_DESCRIPTION = "message_description"
-        const val MESSAGE_TITLE = "message_title"
+        val TAG = "fishpondEditOrDeleteDialogFragment"
+        val TITLE_CARD_EXTRAS = "title_card_extras"
     }
 }

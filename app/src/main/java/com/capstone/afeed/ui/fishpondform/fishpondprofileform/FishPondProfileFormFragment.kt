@@ -1,6 +1,7 @@
 package com.capstone.afeed.ui.fishpondform.fishpondprofileform
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,48 +21,53 @@ import com.capstone.afeed.ui.fishpondform.FishPondFormViewModelFactory
 
 class FishPondProfileFormFragment : Fragment() {
 
-    private var _binding : FragmentFishPondProfileFormBinding? = null
+    private var _binding: FragmentFishPondProfileFormBinding? = null
     private val binding get() = _binding!!
     private val fishPondFormViewModel: FishPondFormViewModel by activityViewModels {
         FishPondFormViewModelFactory.getInstance(
             requireContext()
         )
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFishPondProfileFormBinding.inflate(inflater,container,false)
+        _binding = FragmentFishPondProfileFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupView()
+
     }
 
     private fun setupView() {
-        var fishpondName = ""
-        var fishpondDescription = ""
         var fishType = ""
+        var initializerFishType = ""
+
+        fishPondFormViewModel.fishpondProfile.observe(requireActivity()) {
+            with(binding) {
+                inputTextFishpondName.setText(it?.fishpondName)
+                inputTextFishpondDescription.setText(it?.fishpondDescription)
+                initializerFishType = it?.fishType.toString()
+            }
+        }
+
+
         with(binding) {
             includeProgressFormIndicator.apply {
                 textIndicatorView1.setTextColor(requireContext().getColor(R.color.md_theme_onPrimary))
                 circleImageIndicatorView1.setImageResource(R.color.md_theme_primary)
             }
-            inputTextFishpondName.addTextChangedListener {
-                fishpondName = it.toString()
-            }
-            inputTextFishpondDescription.addTextChangedListener {
-                fishpondDescription = it.toString()
-            }
-            setupFishTypeSpinner(spinnerFishType){
+            setupFishTypeSpinner(spinnerFishType, initializerFishType) {
                 fishType = it
             }
             fabNext.setOnClickListener {
                 sendInputdataToViewmodel(
                     FishpondIotRequest.Fishpond(
-                        fishpondDescription,
-                        fishpondName,
+                        inputTextFishpondDescription.text.toString(),
+                        inputTextFishpondName.text.toString(),
                         fishType
                     )
                 )
@@ -70,25 +76,33 @@ class FishPondProfileFormFragment : Fragment() {
         }
     }
 
-    private fun setupFishTypeSpinner(spinnerFishType: Spinner, selectedValueListener :(selectedValue : String)-> Unit) {
+    private fun setupFishTypeSpinner(
+        spinnerFishType: Spinner,
+        initialValue: String?,
+        selectedValueListener: (selectedValue: String) -> Unit
+    ) {
         ArrayAdapter.createFromResource(
             requireContext(),
             R.array.fish_type_spinner,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears.
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner.
             spinnerFishType.adapter = adapter
+            spinnerFishType.setSelection(adapter.getPosition(initialValue))
         }
 
         spinnerFishType.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener{
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+            AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
                 val item = parent?.getItemAtPosition(position).toString()
                 if (position == 0) {
-                    // This is the placeholder item
-                    Toast.makeText(requireContext(), "Please select an item", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Please select an item", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
                     selectedValueListener(item)
                 }

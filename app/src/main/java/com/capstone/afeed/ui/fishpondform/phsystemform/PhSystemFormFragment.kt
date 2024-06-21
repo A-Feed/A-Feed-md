@@ -48,7 +48,7 @@ class PhSystemFormFragment : Fragment() {
 
     private fun setupObserver() {
         fishPondFormViewModel.fishpondPhsystem.observe(requireActivity()){
-            phSystemAdapter.submitList(it.toList())
+            phSystemAdapter.submitList(it?.toList())
         }
     }
 

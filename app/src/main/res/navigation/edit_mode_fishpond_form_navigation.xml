@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edit_mode_fishpond_form_navigation"
+    app:startDestination="@id/editFishPondFormFragment">
+
+    <fragment
+        android:id="@+id/editFishPondFormFragment"
+        android:name="com.capstone.afeed.ui.fishpondform.editfishpondform.EditFishPondFormFragment"
+        android:label="fragment_edit_fish_pond_form"
+        tools:layout="@layout/fragment_edit_fish_pond_form" >
+        <action
+            android:id="@+id/action_editFishPondFormFragment_to_fishpond_form_navigation"
+            app:destination="@id/fishpond_form_navigation" />
+    </fragment>
+    <include app:graph="@navigation/fishpond_form_navigation" />
+</navigation>

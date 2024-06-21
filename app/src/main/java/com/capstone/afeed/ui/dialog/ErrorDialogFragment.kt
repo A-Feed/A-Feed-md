@@ -10,20 +10,24 @@ import com.capstone.afeed.databinding.DialogErrorFragmentBinding
 
 class ErrorDialogFragment : DialogFragment() {
 
-    private var _binding : DialogErrorFragmentBinding? = null
+    private var _binding: DialogErrorFragmentBinding? = null
     private val binding get() = _binding!!
 
     override fun onResume() {
         super.onResume()
         val getDisplayDimension = resources.displayMetrics
-        this.dialog?.window?.setLayout((getDisplayDimension.widthPixels * 7) /10, WindowManager.LayoutParams.WRAP_CONTENT)
+        this.dialog?.window?.setLayout(
+            (getDisplayDimension.widthPixels * 9) / 10,
+            WindowManager.LayoutParams.WRAP_CONTENT
+        )
     }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DialogErrorFragmentBinding.inflate(inflater,container,false)
+        _binding = DialogErrorFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -33,10 +37,11 @@ class ErrorDialogFragment : DialogFragment() {
     }
 
     private fun setupView() {
-        with(binding){
+        with(binding) {
             btnCloseErrorDialog.setOnClickListener {
                 dialog?.dismiss()
             }
+            textViewErrorMessageDescription.text = arguments?.getString(MESSAGE_DESCRIPTION)
         }
     }
 
@@ -46,7 +51,9 @@ class ErrorDialogFragment : DialogFragment() {
         _binding = null
     }
 
-    companion object{
+
+    companion object {
+        const val MESSAGE_DESCRIPTION = "message_description"
         const val TAG = "ErrorDialog"
     }
 

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class GetDetailFishPondResponse(
     @SerializedName("data")
-    val `data`: Data,
+    val data: Data,
     @SerializedName("status")
     val status: String
 ) {
@@ -29,12 +29,14 @@ data class GetDetailFishPondResponse(
     data class Fishpond(
         @SerializedName("fishpondId")
         val fishpondId: String,
+        @SerializedName("fishType")
+        val fishType: String,
         @SerializedName("fishpondDescription")
         val fishpondDescription: String,
         @SerializedName("fishpondName")
         val fishpondName: String,
         @SerializedName("feedingProgress")
-        val feedingProgress: String
+        val feedingProgress: String,
     )
 
     data class FishpondScore(
