@@ -24,7 +24,7 @@ class HomeFragment : Fragment() {
         get() = _binding ?: throw IllegalStateException(getString(R.string.illegal_state_exception))
 
     private val homeViewModel: HomeViewModel by viewModels {
-        HomeViewModelFactory.getInstance(requireContext())
+        HomeViewModelFactory.getInstance()
     }
 
     private lateinit var articleAdapter: ArticleAdapter

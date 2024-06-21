@@ -23,12 +23,11 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10dp"
-            >
+            android:layout_marginHorizontal="10dp">
 
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/tv_author_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -37,43 +36,47 @@
                 tools:text="Author name" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_source_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/inter_regular"
-                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/tv_author_name"
                 tools:text="Source Name" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView"
+                android:id="@+id/card_article_detail"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginVertical="10dp"
                 app:cardCornerRadius="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11">
+                app:layout_constraintTop_toBottomOf="@+id/tv_source_name">
 
                 <ImageView
+                    android:id="@+id/iv_article_image_detail"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp" />
+                    android:layout_height="200dp"
+                    android:contentDescription="@string/article_full_image"
+                    android:scaleType="centerCrop" />
 
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/tv_article_title_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/inter_bold"
                 android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/cardView"
+                app:layout_constraintTop_toBottomOf="@+id/card_article_detail"
                 tools:text="Title News/Article Here" />
 
             <TextView
+                android:id="@+id/tv_article_content_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/textView12"
+                app:layout_constraintTop_toBottomOf="@+id/tv_article_title_detail"
                 tools:text="@string/lorem" />
 
 

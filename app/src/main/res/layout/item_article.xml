@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
+            android:background="#74000000"
             android:textColor="@color/white"
             tools:text="Pengaruh Desain dan bahan kolam \n dalam budidaya" />
 
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:background="@color/white"
+            android:background="#99FFFFFF"
             android:contentDescription="@string/logo_app"
             android:src="@drawable/logo_app_reduce_whitespace" />
     </FrameLayout>

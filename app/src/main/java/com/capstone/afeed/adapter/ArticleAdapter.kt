@@ -1,13 +1,15 @@
 package com.capstone.afeed.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.capstone.afeed.data.remote.response.GetArticlesResponse
 import com.capstone.afeed.databinding.ItemArticleBinding
+import com.capstone.afeed.ui.articledetail.ArticleDetailActivity
+import com.capstone.afeed.utils.loadImage
 
 class ArticleAdapter :
     ListAdapter<GetArticlesResponse.Article, ArticleAdapter.MyViewHolder>(DIFF_CALLBACK) {
@@ -25,8 +27,13 @@ class ArticleAdapter :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(article: GetArticlesResponse.Article) {
             with(binding) {
-                Glide.with(ivArticle).load("${article.urlToImage}").into(ivArticle)
+                ivArticle.loadImage("${article.urlToImage}")
                 tvArticleTitle.text = article.title
+            }
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, ArticleDetailActivity::class.java)
+                intent.putExtra(ArticleDetailActivity.EXTRA_DATA, article)
+                itemView.context.startActivity(intent)
             }
         }
     }
