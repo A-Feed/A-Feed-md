@@ -1,6 +1,8 @@
 package com.capstone.afeed.data.remote.response
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
 
 data class GetArticlesResponse(
@@ -11,6 +13,7 @@ data class GetArticlesResponse(
     @SerializedName("totalResults")
     val totalResults: Int
 ) {
+    @Parcelize
     data class Article(
         @SerializedName("author")
         val author: String?,
@@ -28,11 +31,13 @@ data class GetArticlesResponse(
         val url: String,
         @SerializedName("urlToImage")
         val urlToImage: String?
-    )
+    ) : Parcelable
+
+    @Parcelize
     data class Source(
         @SerializedName("id")
         val id: String?,
         @SerializedName("name")
         val name: String
-    )
+    ) : Parcelable
 }

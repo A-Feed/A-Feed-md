@@ -47,6 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:hint="@string/password"
+        app:endIconMode="password_toggle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/til_login_email">
@@ -57,7 +58,7 @@
             android:layout_height="wrap_content"
             android:autofillHints="emailAddress"
             android:ems="10"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="12dp"
             android:textColorHint="#546E7A" />
 

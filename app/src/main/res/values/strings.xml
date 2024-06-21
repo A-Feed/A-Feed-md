@@ -166,4 +166,8 @@
     <string name="user_s_profile_picture" translatable="false">User\'s Profile Picture</string>
     <string name="profile_edit">edit</string>
     <string name="bottom_sheet_s_image" translatable="false">Bottom Sheet\'s Image</string>
+    <string name="article_full_image" translatable="false">Article Full Image</string>
+    <string name="registered_iot_system">Registered IOT System</string>
+    <string name="temperature_system_login">Temperature System</string>
+    <string name="registered_iot_system_description">This is your registered iot system and \\nPh System, Temperature System, A-Feeder with only ON status</string>
 </resources>

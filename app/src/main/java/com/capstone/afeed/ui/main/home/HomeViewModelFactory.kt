@@ -1,6 +1,5 @@
 package com.capstone.afeed.ui.main.home
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.afeed.di.ArticlesInjection
@@ -21,7 +20,7 @@ class HomeViewModelFactory private constructor(
         @Volatile
         private var INSTANCE: HomeViewModelFactory? = null
 
-        fun getInstance(context: Context): HomeViewModelFactory =
+        fun getInstance(): HomeViewModelFactory =
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: HomeViewModelFactory(ArticlesInjection.provideRepository())
             }.also { INSTANCE = it }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,7 +25,7 @@ class HomeFragment : Fragment() {
         get() = _binding ?: throw IllegalStateException(getString(R.string.illegal_state_exception))
 
     private val homeViewModel: HomeViewModel by viewModels {
-        HomeViewModelFactory.getInstance(requireContext())
+        HomeViewModelFactory.getInstance()
     }
 
     private lateinit var articleAdapter: ArticleAdapter
@@ -48,10 +49,17 @@ class HomeFragment : Fragment() {
 
     private fun setupView() {
         with(binding) {
-            infoHomeSection.btnElevatedSignNowButton.setOnClickListener {
-                val intent =
-                    Intent(requireContext(), AuthenticationActivity::class.java)
-                startActivity(intent)
+            val isLogin = true
+            includeInfoHome.isVisible = !isLogin
+            includeInfoHomeLogin.isVisible = isLogin
+
+            if (includeInfoHome.isVisible) {
+                infoHomeSection.btnElevatedSignNowButton.setOnClickListener {
+                    val intent =
+                        Intent(requireContext(), AuthenticationActivity::class.java)
+                    startActivity(intent)
+                    requireActivity().finish()
+                }
             }
             btnAFeeding.setOnClickListener {
                 ModalBottomSheet(1).show(parentFragmentManager, ModalBottomSheet.TAG)
