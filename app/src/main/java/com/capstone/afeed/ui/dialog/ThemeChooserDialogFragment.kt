@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.DialogFragment
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.DialogSuccessFragmentBinding
@@ -18,6 +19,7 @@ class ThemeChooserDialogFragment : DialogFragment() {
     override fun onResume() {
         super.onResume()
         val getDisplayDimension = resources.displayMetrics
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent)
         this.dialog?.window?.setLayout((getDisplayDimension.widthPixels * 9) /10, WindowManager.LayoutParams.WRAP_CONTENT)
     }
     override fun onCreateView(
@@ -53,7 +55,14 @@ class ThemeChooserDialogFragment : DialogFragment() {
                 }
             }
             btnSave.setOnClickListener {
-                
+                when(choosedTheme){
+                    "light" -> {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                    }
+                    "dark" -> {
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                    }
+                }
             }
 
         }
