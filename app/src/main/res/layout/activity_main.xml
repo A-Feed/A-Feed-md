@@ -32,7 +32,6 @@
         app:layout_constraintTop_toBottomOf="@+id/viewpager_main"
         app:menu="@menu/bottom_navigation_menu" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineappbar"
         android:layout_width="wrap_content"

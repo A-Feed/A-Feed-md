@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import com.capstone.afeed.R
 import com.capstone.afeed.databinding.DialogSuccessFragmentBinding
@@ -13,6 +14,12 @@ import com.capstone.afeed.databinding.FragmentThemeChooserDialogBinding
 class ThemeChooserDialogFragment : DialogFragment() {
     private var _binding : FragmentThemeChooserDialogBinding? = null
     private val binding get() = _binding!!
+
+    override fun onResume() {
+        super.onResume()
+        val getDisplayDimension = resources.displayMetrics
+        this.dialog?.window?.setLayout((getDisplayDimension.widthPixels * 9) /10, WindowManager.LayoutParams.WRAP_CONTENT)
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

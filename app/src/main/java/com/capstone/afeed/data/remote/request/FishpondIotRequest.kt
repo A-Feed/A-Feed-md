@@ -13,7 +13,6 @@ data class FishpondIotRequest(
 ) : Parcelable
 {
     @Parcelize
-
     data class Afeeding(
         val aFeedingSchedule: List<AFeedingSchedule>,
         val aFeedingSystem: List<AFeedingSystem>

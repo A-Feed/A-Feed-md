@@ -34,9 +34,8 @@ class FishPondApiConfig {
                 .addInterceptor(authInterceptor)
                 .build()
 
-
             val retrofit = Retrofit.Builder()
-                .baseUrl("https://7106-2001-448a-2018-2b19-a83e-52ce-1412-2b9d.ngrok-free.app/")
+                .baseUrl("https://94d2-2001-448a-2018-87d-31b6-3b36-1380-88a2.ngrok-free.app")
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

@@ -91,6 +91,7 @@ class AFeedingScheduleAdapter(
                 inputTextTime.setText(item.time)
                 inputTextFoodAmount.setText(item.foodAmount)
                 btnDeleteSchedule.setOnClickListener {
+                    Log.i("datasadapter", item.id.toString())
                     addNewListener?.deleteItemListener(item.id)
                 }
             }

@@ -13,6 +13,21 @@
         android:elevation="1000dp" />
 
     <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container_view_fish_pond_form_edit_mode"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        android:visibility="gone"
+        app:navGraph="@navigation/edit_mode_fishpond_form_navigation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineappbar"
+        tools:layout="@layout/fragment_edit_fish_pond_form"
+        />
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view_fish_pond_form"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"

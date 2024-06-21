@@ -47,7 +47,8 @@ class DashboardFragment : Fragment() {
 
     private fun setupDummyData() {
         fispondSystemMeanValueAdapter.submitList(listOf(
-            GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData("9/10","Ini description","Fihspond ini namanya","1","7-8","23-22"),
+            GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData(
+                "3/3","This fishpond is on the side of the statue","Fishpond John Ace","1","7,6","28,0"),
             GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData("","","","","",""),
             GetListRegisteredFishpondWithSystemMeanScore.FishpondWithMeanSystemData("","","","","",""),
         ))
@@ -87,9 +88,9 @@ class DashboardFragment : Fragment() {
         serviceNavigationAdapter = ServiceNavigationAdapter()
         serviceNavigationAdapter.submitList(
             listOf(
-                NavigationWithIcon(1,R.drawable.home_fill,null,"Monitoring","monitoring your registered IOT system"),
-                NavigationWithIcon(2,R.drawable.home_fill,null,"Setting IOT system","adjust setting for you IOT system"),
-                NavigationWithIcon(3,R.drawable.home_fill,null,"Registering New FishPond","setup and register your new bought IOT to app"),
+                NavigationWithIcon(1,R.drawable.ic_monitoring,null,"Monitoring","monitoring your registered IOT system"),
+                NavigationWithIcon(2,R.drawable.settings_fill,null,"Setting IOT system","adjust setting for you IOT system"),
+                NavigationWithIcon(3,R.drawable.ic_form,null,"Registering New FishPond","setup and register your new bought IOT to app"),
             )
         )
         serviceNavigationAdapter.addNewListener = object : ServiceNavigationAdapter.AddNewListener{
@@ -102,12 +103,11 @@ class DashboardFragment : Fragment() {
                          Intent(requireContext(),MonitoringActivity::class.java)
                     }
                     2 -> {
-                        Intent(requireContext(),FishPondFormActivity::class.java)
+                        Intent(requireContext(),FishPondFormActivity::class.java).putExtra(FishPondFormActivity.FORM_MODE_EXTRAS,FishPondFormActivity.FORM_MODE_EDIT)
                     }
                     3-> {
-                        Intent(requireContext(),FishPondFormActivity::class.java)
+                        Intent(requireContext(),FishPondFormActivity::class.java).putExtra(FishPondFormActivity.FORM_MODE_EXTRAS,FishPondFormActivity.FORM_MODE_ADD)
                     }
-
                     else -> {
                         Intent(requireContext(),MonitoringActivity::class.java)
                     }
